@@ -1,0 +1,370 @@
+entity Dispositivo {
+  idusuario String,
+  idcliente String,
+  iddealer String,
+  activo Boolean,
+  dispositivo String
+}
+
+entity Dealer {
+  nombre String minlength(5) maxlength(100) required,
+  correo String minlength(5) maxlength(255),
+  codigo String minlength(5) maxlength(255),
+  idciudad Long,
+  direccion String minlength(5) maxlength(100) required,
+  telefonofijo String minlength(5) maxlength(45),
+  telefonocelular String minlength(5) maxlength(45),
+  idusuario String
+}
+ 
+entity Cliente {
+  nombre String minlength(5) maxlength(100) required,
+  apellido String minlength(5) maxlength(100) required,
+  correo String minlength(5) maxlength(255),
+  codigoDealer String minlength(5) maxlength(255),
+  idciudad Long,
+  telefonocelular String minlength(5) maxlength(45),
+  telefonofijo String minlength(5) maxlength(45),
+  telefonoempresarial String minlength(5) maxlength(45),
+  direccionresidencial String minlength(5) maxlength(100),
+  direccionempresarial String minlength(5) maxlength(100),
+  fechanacimiento LocalDate required,
+  idusuario String,
+  imagen ImageBlob,
+  idusuario String
+}
+
+
+
+entity Proyecto {
+  fechacreacion Instant,
+  descripcion String minlength(5) maxlength(100) required,
+  valoriva BigDecimal required,
+  totalsiniva BigDecimal required,
+  fechaultimomantenimiento Instant,
+  porcentajedescuento BigDecimal required,
+  total BigDecimal required,
+  activo Boolean,
+  imagen ImageBlob
+}
+
+
+entity Equiposinstalados {
+  descripcion String minlength(5) maxlength(500) required,
+  observacion String minlength(5) maxlength(500) required,
+  fechainstalacion Instant,
+  posibleactuliazcion Boolean,
+  cantidad BigDecimal required
+ }
+
+
+
+entity Departamentos {
+  iddepartamentos Long,
+  departamento String minlength(5) maxlength(255) required
+}
+
+
+entity Municipios {
+  idmunicipios Long,
+  municipio String minlength(5) maxlength(100) required,
+  estado String minlength(5) maxlength(100) required
+}
+
+entity Ciudad {
+  idciudad Long,
+  nombre String minlength(5) maxlength(100) required
+}
+
+enum Estadocotizacion {
+  INICIO,
+  ENPROCESO,
+  INSTALADO,
+  TERMINADA
+}
+
+
+entity Cotizacion {
+  fechacreacion Instant,
+  descripcion String minlength(5) maxlength(100) required,
+  valoriva BigDecimal required,
+  totalsiniva BigDecimal required,
+  porcentajedescuento BigDecimal required,
+  fechamantenimiento Instant,
+  activo Boolean,
+  total BigDecimal required,
+  estadocotizacion Estadocotizacion
+}
+
+entity EquiposcotizadosToEquipos {
+  valorUnidad BigDecimal required,
+  valorUtilUnidad BigDecimal required,
+  descuentoUnidad BigDecimal required,
+  fechacotizacion Instant required
+  cantidadEquipos BigDecimal required
+}
+
+
+enum EstadoRequerimiento {
+  INICIADO, 
+  ENPROCESO, 
+  RESUELTO,
+  PROBLEMA,
+  PROBLEMAMAYOR
+}
+
+enum TipoRequerimiento {
+	NUEVOEQUIPO,
+	PROBLEMASEQUIPO
+}
+
+entity Requerimiento {
+  detalleproblema TextBlob required,
+  fechacreacion Instant required,
+  fechaactualizacion Instant,
+  observaciones TextBlob,
+  idusuarioatendio String,
+  idusuarioactualizo String,
+  idUsuario String,
+  imagen ImageBlob,
+  estadoRequerimiento EstadoRequerimiento,
+  tipoRequerimiento TipoRequerimiento
+ }
+ 
+entity RequerimientoToSolucion {
+  fechacreacion Instant required
+}
+
+entity TipoSolucion {
+  nombre String minlength(5) maxlength(250) required,
+  code String minlength(2) maxlength(10) required,
+  imagenUrl ImageBlob
+}
+
+entity Solucion {
+  nombre String minlength(5) maxlength(250) required,
+  descripcion TextBlob,
+  code String minlength(2) maxlength(10) required,
+  imagenUrl ImageBlob
+}
+
+
+entity TipoEquipo {
+  nombre String minlength(5) maxlength(100) required,
+  descripcion TextBlob,
+  imagenUrl ImageBlob,
+  code String minlength(2) maxlength(10) required
+}
+
+entity Marca {
+  nombre String minlength(5) maxlength(100) required,
+  imagenUrl ImageBlob,
+  code String minlength(2) maxlength(10) required
+}
+
+entity Equipo {
+  nombre String minlength(5) maxlength(250) required,
+  version String minlength(2) maxlength(50) required,
+  controlador String minlength(5) maxlength(100) required,
+  accountname String minlength(5) maxlength(100),
+  controllermacaddress String minlength(5) maxlength(100),
+  imagenUrl ImageBlob,
+  valor BigDecimal required
+}
+
+
+entity Novedad {
+  titulo String minlength(5) maxlength(100) required,
+  subtitulo String minlength(5) maxlength(250) required,
+  descripcion String minlength(5) maxlength(500) required,
+  imagen ImageBlob
+}
+
+
+enum TipoContenido {
+  VIDEO,
+  IMAGEN,
+  AUDIO
+}
+
+
+entity Contenido {
+  descripcion TextBlob required,
+  videoUrl String,
+  imagenURl ImageBlob,
+  audio String,
+  tipoContenido TipoContenido,
+  activo Boolean,
+  fechacreacion Instant
+}
+
+entity NovedadToCliente{
+  fechacreacion Instant
+}
+
+entity Intereses {
+  nombre String minlength(5) maxlength(45) required,
+  descripcion String minlength(5) maxlength(45) required,
+  imagen String minlength(5) maxlength(45) required,
+  code String minlength(2) maxlength(10) required
+}
+
+entity InteresesToCliente {
+ fechacreacion Instant
+}
+
+entity Comerciales {
+  codigo String minlength(5) maxlength(45) required,
+  nombre String minlength(5) maxlength(100) required,
+  descripcion TextBlob,
+  correo String minlength(5) maxlength(255),
+  zona String minlength(5) maxlength(255),
+  idciudad Long,
+  idusuario String
+}
+
+entity Colaboradores{
+ nombre String minlength(5) maxlength(100) required,
+ correo String minlength(5) maxlength(255),
+ activo Boolean,
+ idusuario String
+}
+
+
+enum Areas {
+ SRVICIOALCLIENTE,
+ AREATECNICA,
+ GERENCIA
+}
+
+entity Notificaciones{
+ correo String minlength(5) maxlength(255) required,
+ area Areas required, 
+ activo Boolean required,
+ idusuario String
+}
+
+
+relationship OneToMany {
+	Dealer{colaboradores} to Colaboradores{dealer required} 
+}
+
+relationship OneToMany {
+	Comerciales{dealer} to Dealer{comerciales required} 
+}
+
+
+relationship OneToMany {
+	TipoSolucion{solucion} to Solucion{tipoSolucion required} 
+}
+
+
+relationship OneToMany {
+	Cliente{interesesToCliente} to InteresesToCliente{cliente required} 
+}
+
+
+relationship OneToMany {
+	Intereses{interesesToCliente} to InteresesToCliente{intereses required} 
+}
+
+
+relationship OneToMany {
+	Novedad{novedadToCliente} to NovedadToCliente{novedad required} 
+}
+
+relationship OneToMany {
+	Cliente{novedadToCliente} to NovedadToCliente{cliente required} 
+}
+
+relationship OneToMany {
+	Marca{equipo} to Equipo{marca required} 
+}
+
+
+relationship OneToMany {
+	TipoEquipo{marca} to Marca{tipoEquipo required} 
+}
+
+relationship OneToMany {
+	Requerimiento{requerimientoToSolucion} to RequerimientoToSolucion{requerimiento required} 
+}
+
+relationship OneToMany {
+	Solucion{requerimientoToSolucion} to RequerimientoToSolucion{solucion required} 
+}
+
+
+relationship OneToMany {
+	Solucion{tipoEquipo} to TipoEquipo{solucion required} 
+}
+
+
+relationship OneToMany {
+	Dealer{cliente} to Cliente{dealer required} 
+}
+
+relationship OneToMany {
+	Cliente{Equiposinstalados} to Equiposinstalados{cliente required}
+}
+
+relationship OneToMany {
+	Equipo{Equiposinstalados} to Equiposinstalados{equipo required}
+}
+
+relationship OneToMany {
+	Proyecto{Equiposinstalados} to Equiposinstalados{proyecto required}
+}
+
+relationship OneToMany {
+  Novedad{contenido} to Contenido{novedad required} 
+}
+
+relationship OneToMany {
+   Departamentos{municipios} to Municipios{departamentos required} 
+}   
+
+relationship OneToMany {
+   Municipios{ciudad} to Ciudad{municipios required} 
+}   
+
+
+relationship OneToMany {
+   Cliente{cotizacion} to Cotizacion{cliente required}
+}
+
+
+relationship OneToMany {
+   Cotizacion{equiposcotizadosToEquipos} to EquiposcotizadosToEquipos{cotizacion required}
+}
+
+relationship OneToMany {
+   Equipo{equiposcotizadosToEquipos} to EquiposcotizadosToEquipos{equiposcotizadosToEquipos required}
+}
+
+paginate Dispositivo with pagination
+paginate Dealer with pagination
+paginate Cliente with pagination
+paginate Proyecto with pagination
+paginate Equiposinstalados with pagination
+paginate Departamentos with pagination
+paginate Municipios with pagination
+paginate Ciudad with pagination
+paginate Cotizacion with pagination
+paginate EquiposcotizadosToEquipos with pagination
+paginate Requerimiento with pagination
+paginate RequerimientoToSolucion with pagination
+paginate TipoSolucion with pagination
+paginate Solucion with pagination
+paginate TipoEquipo with pagination
+paginate Marca with pagination
+paginate Equipo with pagination
+paginate Novedad with pagination
+paginate Contenido with pagination
+paginate NovedadToCliente with pagination
+paginate Intereses with pagination
+paginate InteresesToCliente with pagination
+paginate Comerciales with pagination
+paginate Colaboradores with pagination
+paginate Notificaciones with pagination
+

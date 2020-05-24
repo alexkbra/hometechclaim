@@ -1,0 +1,71 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="requerimiento">
+            <h2><span jhiTranslate="hometechclaimApp.requerimiento.detail.title">Requerimiento</span> {{ requerimiento.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="hometechclaimApp.requerimiento.detalleproblema">Detalleproblema</span></dt>
+                <dd>
+                    <span>{{ requerimiento.detalleproblema }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.requerimiento.fechacreacion">Fechacreacion</span></dt>
+                <dd>
+                    <span>{{ requerimiento.fechacreacion }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.requerimiento.fechaactualizacion">Fechaactualizacion</span></dt>
+                <dd>
+                    <span>{{ requerimiento.fechaactualizacion }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.requerimiento.observaciones">Observaciones</span></dt>
+                <dd>
+                    <span>{{ requerimiento.observaciones }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.requerimiento.idusuarioatendio">Idusuarioatendio</span></dt>
+                <dd>
+                    <span>{{ requerimiento.idusuarioatendio }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.requerimiento.idusuarioactualizo">Idusuarioactualizo</span></dt>
+                <dd>
+                    <span>{{ requerimiento.idusuarioactualizo }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.requerimiento.idUsuario">Id Usuario</span></dt>
+                <dd>
+                    <span>{{ requerimiento.idUsuario }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.requerimiento.imagen">Imagen</span></dt>
+                <dd>
+                    <div *ngIf="requerimiento.imagen">
+                        <a (click)="openFile(requerimiento.imagenContentType!, requerimiento.imagen)">
+                            <img [src]="'data:' + requerimiento.imagenContentType + ';base64,' + requerimiento.imagen" style="max-width: 100%;" alt="requerimiento image"/>
+                        </a>
+                        {{ requerimiento.imagenContentType }}, {{ byteSize(requerimiento.imagen) }}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.requerimiento.estadoRequerimiento">Estado Requerimiento</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'hometechclaimApp.EstadoRequerimiento.' + requerimiento.estadoRequerimiento }}">{{ requerimiento.estadoRequerimiento }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.requerimiento.tipoRequerimiento">Tipo Requerimiento</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'hometechclaimApp.TipoRequerimiento.' + requerimiento.tipoRequerimiento }}">{{ requerimiento.tipoRequerimiento }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/requerimiento', requerimiento.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

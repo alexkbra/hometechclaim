@@ -1,0 +1,37 @@
+{
+    "name": "NovedadToCliente",
+    "fields": [
+        {
+            "fieldName": "fechacreacion",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "novedad",
+            "otherEntityRelationshipName": "novedadToCliente",
+            "relationshipValidateRules": "required",
+            "relationshipName": "novedad",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "cliente",
+            "otherEntityRelationshipName": "novedadToCliente",
+            "relationshipValidateRules": "required",
+            "relationshipName": "cliente",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200408040500",
+    "entityTableName": "novedad_to_cliente",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

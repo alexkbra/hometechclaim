@@ -1,0 +1,104 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-tipo-equipo-heading" jhiTranslate="hometechclaimApp.tipoEquipo.home.createOrEditLabel">Create or edit a Tipo Equipo</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hometechclaimApp.tipoEquipo.nombre" for="field_nombre">Nombre</label>
+                    <input type="text" class="form-control" name="nombre" id="field_nombre"
+                           formControlName="nombre"/>
+                    <div *ngIf="editForm.get('nombre')!.invalid && (editForm.get('nombre')!.dirty || editForm.get('nombre')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('nombre')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('nombre')?.errors?.minlength" jhiTranslate="entity.validation.minlength" [translateValues]="{ min: 5 }">
+                        This field is required to be at least 5 characters.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('nombre')?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 100 }">
+                        This field cannot be longer than 100 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hometechclaimApp.tipoEquipo.descripcion" for="field_descripcion">Descripcion</label>
+                    <textarea class="form-control" name="descripcion" id="field_descripcion"
+                              formControlName="descripcion"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hometechclaimApp.tipoEquipo.imagenUrl" for="field_imagenUrl">Imagen Url</label>
+                    <div>
+                        <img [src]="'data:' + editForm.get('imagenUrlContentType')!.value + ';base64,' + editForm.get('imagenUrl')!.value" style="max-height: 100px;" *ngIf="editForm.get('imagenUrl')!.value" alt="tipoEquipo image"/>
+                        <div *ngIf="editForm.get('imagenUrl')!.value" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{ editForm.get('imagenUrlContentType')!.value }}, {{ byteSize(editForm.get('imagenUrl')!.value) }}</span>
+                            <button type="button" (click)="clearInputImage('imagenUrl', 'imagenUrlContentType', 'file_imagenUrl')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon icon="times"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_imagenUrl" (change)="setFileData($event, 'imagenUrl', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="imagenUrl" id="field_imagenUrl"
+                           formControlName="imagenUrl"/>
+                    <input type="hidden" class="form-control" name="imagenUrlContentType" id="field_imagenUrlContentType"
+                           formControlName="imagenUrlContentType" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hometechclaimApp.tipoEquipo.code" for="field_code">Code</label>
+                    <input type="text" class="form-control" name="code" id="field_code"
+                           formControlName="code"/>
+                    <div *ngIf="editForm.get('code')!.invalid && (editForm.get('code')!.dirty || editForm.get('code')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('code')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('code')?.errors?.minlength" jhiTranslate="entity.validation.minlength" [translateValues]="{ min: 2 }">
+                        This field is required to be at least 2 characters.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('code')?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 10 }">
+                        This field cannot be longer than 10 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hometechclaimApp.tipoEquipo.solucion" for="field_solucion">Solucion</label>
+                    <select class="form-control" id="field_solucion" name="solucion" formControlName="solucion">
+                        <option *ngIf="!editForm.get('solucion')!.value" [ngValue]="null" selected></option>
+                        <option [ngValue]="solucionOption.id === editForm.get('solucion')!.value?.id ? editForm.get('solucion')!.value : solucionOption" *ngFor="let solucionOption of solucions; trackBy: trackById">{{ solucionOption.id }}</option>
+                    </select>
+                </div>
+                <div *ngIf="editForm.get('solucion')!.invalid && (editForm.get('solucion')!.dirty || editForm.get('solucion')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('solucion')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

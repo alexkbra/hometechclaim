@@ -1,0 +1,88 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="hometechclaimApp.solucion.home.title">Solucions</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-solucion" [routerLink]="['/solucion/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="hometechclaimApp.solucion.home.createLabel">
+            Create a new Solucion
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="solucions?.length === 0">
+        <span jhiTranslate="hometechclaimApp.solucion.home.notFound">No solucions found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="solucions?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="nombre"><span jhiTranslate="hometechclaimApp.solucion.nombre">Nombre</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="descripcion"><span jhiTranslate="hometechclaimApp.solucion.descripcion">Descripcion</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="code"><span jhiTranslate="hometechclaimApp.solucion.code">Code</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="imagenUrl"><span jhiTranslate="hometechclaimApp.solucion.imagenUrl">Imagen Url</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="tipoSolucion.id"><span jhiTranslate="hometechclaimApp.solucion.tipoSolucion">Tipo Solucion</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let solucion of solucions ;trackBy: trackId">
+                    <td><a [routerLink]="['/solucion', solucion.id, 'view']">{{ solucion.id }}</a></td>
+                    <td>{{ solucion.nombre }}</td>
+                    <td>{{ solucion.descripcion }}</td>
+                    <td>{{ solucion.code }}</td>
+                    <td>
+                        <a *ngIf="solucion.imagenUrl" (click)="openFile(solucion.imagenUrlContentType, solucion.imagenUrl)">
+                            <img [src]="'data:' + solucion.imagenUrlContentType + ';base64,' + solucion.imagenUrl" style="max-height: 30px;" alt="solucion image"/>
+                        </a>
+                        <span *ngIf="solucion.imagenUrl">{{ solucion.imagenUrlContentType }}, {{ byteSize(solucion.imagenUrl) }}</span>
+                    </td>
+                    <td>
+                        <div *ngIf="solucion.tipoSolucion">
+                            <a [routerLink]="['/tipo-solucion', solucion.tipoSolucion?.id, 'view']" >{{ solucion.tipoSolucion?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/solucion', solucion.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/solucion', solucion.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(solucion)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="solucions?.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>

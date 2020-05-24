@@ -1,0 +1,63 @@
+{
+    "name": "TipoEquipo",
+    "fields": [
+        {
+            "fieldName": "nombre",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength",
+                "required"
+            ],
+            "fieldValidateRulesMinlength": "5",
+            "fieldValidateRulesMaxlength": "100"
+        },
+        {
+            "fieldName": "descripcion",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "imagenUrl",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "code",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength",
+                "required"
+            ],
+            "fieldValidateRulesMinlength": "2",
+            "fieldValidateRulesMaxlength": "10"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "marca",
+            "otherEntityRelationshipName": "tipoEquipo",
+            "relationshipName": "marca"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "solucion",
+            "otherEntityRelationshipName": "tipoEquipo",
+            "relationshipValidateRules": "required",
+            "relationshipName": "solucion",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200408040000",
+    "entityTableName": "tipo_equipo",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

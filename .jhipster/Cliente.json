@@ -1,0 +1,161 @@
+{
+    "name": "Cliente",
+    "fields": [
+        {
+            "fieldName": "nombre",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength",
+                "required"
+            ],
+            "fieldValidateRulesMinlength": "5",
+            "fieldValidateRulesMaxlength": "100"
+        },
+        {
+            "fieldName": "apellido",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength",
+                "required"
+            ],
+            "fieldValidateRulesMinlength": "5",
+            "fieldValidateRulesMaxlength": "100"
+        },
+        {
+            "fieldName": "correo",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": "5",
+            "fieldValidateRulesMaxlength": "255"
+        },
+        {
+            "fieldName": "codigoDealer",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": "5",
+            "fieldValidateRulesMaxlength": "255"
+        },
+        {
+            "fieldName": "idciudad",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "telefonocelular",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": "5",
+            "fieldValidateRulesMaxlength": "45"
+        },
+        {
+            "fieldName": "telefonofijo",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": "5",
+            "fieldValidateRulesMaxlength": "45"
+        },
+        {
+            "fieldName": "telefonoempresarial",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": "5",
+            "fieldValidateRulesMaxlength": "45"
+        },
+        {
+            "fieldName": "direccionresidencial",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": "5",
+            "fieldValidateRulesMaxlength": "100"
+        },
+        {
+            "fieldName": "direccionempresarial",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": "5",
+            "fieldValidateRulesMaxlength": "100"
+        },
+        {
+            "fieldName": "fechanacimiento",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "idusuario",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "imagen",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "interesesToCliente",
+            "otherEntityRelationshipName": "cliente",
+            "relationshipName": "interesesToCliente"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "novedadToCliente",
+            "otherEntityRelationshipName": "cliente",
+            "relationshipName": "novedadToCliente"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "equiposinstalados",
+            "otherEntityRelationshipName": "cliente",
+            "relationshipName": "equiposinstalados"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "cotizacion",
+            "otherEntityRelationshipName": "cliente",
+            "relationshipName": "cotizacion"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "dealer",
+            "otherEntityRelationshipName": "cliente",
+            "relationshipValidateRules": "required",
+            "relationshipName": "dealer",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200408034800",
+    "entityTableName": "cliente",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

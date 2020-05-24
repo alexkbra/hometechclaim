@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="solucion">
+            <h2><span jhiTranslate="hometechclaimApp.solucion.detail.title">Solucion</span> {{ solucion.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="hometechclaimApp.solucion.nombre">Nombre</span></dt>
+                <dd>
+                    <span>{{ solucion.nombre }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.solucion.descripcion">Descripcion</span></dt>
+                <dd>
+                    <span>{{ solucion.descripcion }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.solucion.code">Code</span></dt>
+                <dd>
+                    <span>{{ solucion.code }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.solucion.imagenUrl">Imagen Url</span></dt>
+                <dd>
+                    <div *ngIf="solucion.imagenUrl">
+                        <a (click)="openFile(solucion.imagenUrlContentType!, solucion.imagenUrl)">
+                            <img [src]="'data:' + solucion.imagenUrlContentType + ';base64,' + solucion.imagenUrl" style="max-width: 100%;" alt="solucion image"/>
+                        </a>
+                        {{ solucion.imagenUrlContentType }}, {{ byteSize(solucion.imagenUrl) }}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.solucion.tipoSolucion">Tipo Solucion</span></dt>
+                <dd>
+                    <div *ngIf="solucion.tipoSolucion">
+                        <a [routerLink]="['/tipo-solucion', solucion.tipoSolucion?.id, 'view']">{{ solucion.tipoSolucion?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/solucion', solucion.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

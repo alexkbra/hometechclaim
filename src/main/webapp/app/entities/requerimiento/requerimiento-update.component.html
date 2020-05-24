@@ -1,0 +1,123 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-requerimiento-heading" jhiTranslate="hometechclaimApp.requerimiento.home.createOrEditLabel">Create or edit a Requerimiento</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hometechclaimApp.requerimiento.detalleproblema" for="field_detalleproblema">Detalleproblema</label>
+                    <textarea class="form-control" name="detalleproblema" id="field_detalleproblema"
+                              formControlName="detalleproblema"></textarea>
+                    <div *ngIf="editForm.get('detalleproblema')!.invalid && (editForm.get('detalleproblema')!.dirty || editForm.get('detalleproblema')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('detalleproblema')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hometechclaimApp.requerimiento.fechacreacion" for="field_fechacreacion">Fechacreacion</label>
+                    <div class="d-flex">
+                        <input id="field_fechacreacion" type="datetime-local" class="form-control" name="fechacreacion" formControlName="fechacreacion" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                    <div *ngIf="editForm.get('fechacreacion')!.invalid && (editForm.get('fechacreacion')!.dirty || editForm.get('fechacreacion')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('fechacreacion')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('fechacreacion')?.errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                            This field should be a date and time.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hometechclaimApp.requerimiento.fechaactualizacion" for="field_fechaactualizacion">Fechaactualizacion</label>
+                    <div class="d-flex">
+                        <input id="field_fechaactualizacion" type="datetime-local" class="form-control" name="fechaactualizacion" formControlName="fechaactualizacion" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hometechclaimApp.requerimiento.observaciones" for="field_observaciones">Observaciones</label>
+                    <textarea class="form-control" name="observaciones" id="field_observaciones"
+                              formControlName="observaciones"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hometechclaimApp.requerimiento.idusuarioatendio" for="field_idusuarioatendio">Idusuarioatendio</label>
+                    <input type="text" class="form-control" name="idusuarioatendio" id="field_idusuarioatendio"
+                           formControlName="idusuarioatendio"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hometechclaimApp.requerimiento.idusuarioactualizo" for="field_idusuarioactualizo">Idusuarioactualizo</label>
+                    <input type="text" class="form-control" name="idusuarioactualizo" id="field_idusuarioactualizo"
+                           formControlName="idusuarioactualizo"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hometechclaimApp.requerimiento.idUsuario" for="field_idUsuario">Id Usuario</label>
+                    <input type="text" class="form-control" name="idUsuario" id="field_idUsuario"
+                           formControlName="idUsuario"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hometechclaimApp.requerimiento.imagen" for="field_imagen">Imagen</label>
+                    <div>
+                        <img [src]="'data:' + editForm.get('imagenContentType')!.value + ';base64,' + editForm.get('imagen')!.value" style="max-height: 100px;" *ngIf="editForm.get('imagen')!.value" alt="requerimiento image"/>
+                        <div *ngIf="editForm.get('imagen')!.value" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{ editForm.get('imagenContentType')!.value }}, {{ byteSize(editForm.get('imagen')!.value) }}</span>
+                            <button type="button" (click)="clearInputImage('imagen', 'imagenContentType', 'file_imagen')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon icon="times"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_imagen" (change)="setFileData($event, 'imagen', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="imagen" id="field_imagen"
+                           formControlName="imagen"/>
+                    <input type="hidden" class="form-control" name="imagenContentType" id="field_imagenContentType"
+                           formControlName="imagenContentType" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hometechclaimApp.requerimiento.estadoRequerimiento" for="field_estadoRequerimiento">Estado Requerimiento</label>
+                    <select class="form-control" name="estadoRequerimiento" formControlName="estadoRequerimiento" id="field_estadoRequerimiento">
+                        <option value="INICIADO">{{ 'hometechclaimApp.EstadoRequerimiento.INICIADO' | translate }}</option>
+                        <option value="ENPROCESO">{{ 'hometechclaimApp.EstadoRequerimiento.ENPROCESO' | translate }}</option>
+                        <option value="RESUELTO">{{ 'hometechclaimApp.EstadoRequerimiento.RESUELTO' | translate }}</option>
+                        <option value="PROBLEMA">{{ 'hometechclaimApp.EstadoRequerimiento.PROBLEMA' | translate }}</option>
+                        <option value="PROBLEMAMAYOR">{{ 'hometechclaimApp.EstadoRequerimiento.PROBLEMAMAYOR' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hometechclaimApp.requerimiento.tipoRequerimiento" for="field_tipoRequerimiento">Tipo Requerimiento</label>
+                    <select class="form-control" name="tipoRequerimiento" formControlName="tipoRequerimiento" id="field_tipoRequerimiento">
+                        <option value="NUEVOEQUIPO">{{ 'hometechclaimApp.TipoRequerimiento.NUEVOEQUIPO' | translate }}</option>
+                        <option value="PROBLEMASEQUIPO">{{ 'hometechclaimApp.TipoRequerimiento.PROBLEMASEQUIPO' | translate }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

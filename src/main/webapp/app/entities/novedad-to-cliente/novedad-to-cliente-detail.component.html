@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="novedadToCliente">
+            <h2><span jhiTranslate="hometechclaimApp.novedadToCliente.detail.title">Novedad To Cliente</span> {{ novedadToCliente.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="hometechclaimApp.novedadToCliente.fechacreacion">Fechacreacion</span></dt>
+                <dd>
+                    <span>{{ novedadToCliente.fechacreacion }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.novedadToCliente.novedad">Novedad</span></dt>
+                <dd>
+                    <div *ngIf="novedadToCliente.novedad">
+                        <a [routerLink]="['/novedad', novedadToCliente.novedad?.id, 'view']">{{ novedadToCliente.novedad?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.novedadToCliente.cliente">Cliente</span></dt>
+                <dd>
+                    <div *ngIf="novedadToCliente.cliente">
+                        <a [routerLink]="['/cliente', novedadToCliente.cliente?.id, 'view']">{{ novedadToCliente.cliente?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/novedad-to-cliente', novedadToCliente.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

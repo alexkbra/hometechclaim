@@ -1,0 +1,92 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="hometechclaimApp.proyecto.home.title">Proyectos</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-proyecto" [routerLink]="['/proyecto/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="hometechclaimApp.proyecto.home.createLabel">
+            Create a new Proyecto
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="proyectos?.length === 0">
+        <span jhiTranslate="hometechclaimApp.proyecto.home.notFound">No proyectos found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="proyectos?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="fechacreacion"><span jhiTranslate="hometechclaimApp.proyecto.fechacreacion">Fechacreacion</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="descripcion"><span jhiTranslate="hometechclaimApp.proyecto.descripcion">Descripcion</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="valoriva"><span jhiTranslate="hometechclaimApp.proyecto.valoriva">Valoriva</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="totalsiniva"><span jhiTranslate="hometechclaimApp.proyecto.totalsiniva">Totalsiniva</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="fechaultimomantenimiento"><span jhiTranslate="hometechclaimApp.proyecto.fechaultimomantenimiento">Fechaultimomantenimiento</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="porcentajedescuento"><span jhiTranslate="hometechclaimApp.proyecto.porcentajedescuento">Porcentajedescuento</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="total"><span jhiTranslate="hometechclaimApp.proyecto.total">Total</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="activo"><span jhiTranslate="hometechclaimApp.proyecto.activo">Activo</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="imagen"><span jhiTranslate="hometechclaimApp.proyecto.imagen">Imagen</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let proyecto of proyectos ;trackBy: trackId">
+                    <td><a [routerLink]="['/proyecto', proyecto.id, 'view']">{{ proyecto.id }}</a></td>
+                    <td>{{ proyecto.fechacreacion | date:'medium' }}</td>
+                    <td>{{ proyecto.descripcion }}</td>
+                    <td>{{ proyecto.valoriva }}</td>
+                    <td>{{ proyecto.totalsiniva }}</td>
+                    <td>{{ proyecto.fechaultimomantenimiento | date:'medium' }}</td>
+                    <td>{{ proyecto.porcentajedescuento }}</td>
+                    <td>{{ proyecto.total }}</td>
+                    <td>{{ proyecto.activo }}</td>
+                    <td>
+                        <a *ngIf="proyecto.imagen" (click)="openFile(proyecto.imagenContentType, proyecto.imagen)">
+                            <img [src]="'data:' + proyecto.imagenContentType + ';base64,' + proyecto.imagen" style="max-height: 30px;" alt="proyecto image"/>
+                        </a>
+                        <span *ngIf="proyecto.imagen">{{ proyecto.imagenContentType }}, {{ byteSize(proyecto.imagen) }}</span>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/proyecto', proyecto.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/proyecto', proyecto.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(proyecto)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="proyectos?.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>

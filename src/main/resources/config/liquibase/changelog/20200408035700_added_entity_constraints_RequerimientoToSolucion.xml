@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity RequerimientoToSolucion.
+    -->
+    <changeSet id="20200408035700-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="requerimiento_id"
+                                 baseTableName="requerimiento_to_solucion"
+                                 constraintName="fk_requerimiento_to_solucion_requerimiento_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="requerimiento"/>
+
+        <addForeignKeyConstraint baseColumnNames="solucion_id"
+                                 baseTableName="requerimiento_to_solucion"
+                                 constraintName="fk_requerimiento_to_solucion_solucion_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="solucion"/>
+
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,78 @@
+{
+    "name": "Equiposinstalados",
+    "fields": [
+        {
+            "fieldName": "descripcion",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength",
+                "required"
+            ],
+            "fieldValidateRulesMinlength": "5",
+            "fieldValidateRulesMaxlength": "500"
+        },
+        {
+            "fieldName": "observacion",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength",
+                "required"
+            ],
+            "fieldValidateRulesMinlength": "5",
+            "fieldValidateRulesMaxlength": "500"
+        },
+        {
+            "fieldName": "fechainstalacion",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "posibleactuliazcion",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "cantidad",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "cliente",
+            "otherEntityRelationshipName": "equiposinstalados",
+            "relationshipValidateRules": "required",
+            "relationshipName": "cliente",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "equipo",
+            "otherEntityRelationshipName": "equiposinstalados",
+            "relationshipValidateRules": "required",
+            "relationshipName": "equipo",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "proyecto",
+            "otherEntityRelationshipName": "equiposinstalados",
+            "relationshipValidateRules": "required",
+            "relationshipName": "proyecto",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200408035000",
+    "entityTableName": "equiposinstalados",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

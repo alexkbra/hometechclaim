@@ -1,0 +1,32 @@
+{
+  "hometechclaimApp": {
+    "cotizacion": {
+      "home": {
+        "title": "Cotizacions",
+        "createLabel": "Crear nuevo Cotizacion",
+        "createOrEditLabel": "Crear o editar Cotizacion",
+        "notFound": "Ningún Cotizacions encontrado"
+      },
+      "created": "Un nuevo Cotizacion ha sido creado con el identificador {{ param }}",
+      "updated": "Un Cotizacion ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Cotizacion ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Cotizacion {{ id }}?"
+      },
+      "detail": {
+        "title": "Cotizacion"
+      },
+      "fechacreacion": "Fechacreacion",
+      "descripcion": "Descripcion",
+      "valoriva": "Valoriva",
+      "totalsiniva": "Totalsiniva",
+      "porcentajedescuento": "Porcentajedescuento",
+      "fechamantenimiento": "Fechamantenimiento",
+      "activo": "Activo",
+      "total": "Total",
+      "estadocotizacion": "Estadocotizacion",
+      "equiposcotizadosToEquipos": "Equiposcotizados To Equipos",
+      "cliente": "Cliente"
+    }
+  }
+}

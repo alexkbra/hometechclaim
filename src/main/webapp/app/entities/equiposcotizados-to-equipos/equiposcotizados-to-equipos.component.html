@@ -1,0 +1,91 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="hometechclaimApp.equiposcotizadosToEquipos.home.title">Equiposcotizados To Equipos</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-equiposcotizados-to-equipos" [routerLink]="['/equiposcotizados-to-equipos/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="hometechclaimApp.equiposcotizadosToEquipos.home.createLabel">
+            Create a new Equiposcotizados To Equipos
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="equiposcotizadosToEquipos?.length === 0">
+        <span jhiTranslate="hometechclaimApp.equiposcotizadosToEquipos.home.notFound">No equiposcotizadosToEquipos found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="equiposcotizadosToEquipos?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="valorUnidad"><span jhiTranslate="hometechclaimApp.equiposcotizadosToEquipos.valorUnidad">Valor Unidad</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="valorUtilUnidad"><span jhiTranslate="hometechclaimApp.equiposcotizadosToEquipos.valorUtilUnidad">Valor Util Unidad</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="descuentoUnidad"><span jhiTranslate="hometechclaimApp.equiposcotizadosToEquipos.descuentoUnidad">Descuento Unidad</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="fechacotizacion"><span jhiTranslate="hometechclaimApp.equiposcotizadosToEquipos.fechacotizacion">Fechacotizacion</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="cantidadEquipos"><span jhiTranslate="hometechclaimApp.equiposcotizadosToEquipos.cantidadEquipos">Cantidad Equipos</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="cotizacion.id"><span jhiTranslate="hometechclaimApp.equiposcotizadosToEquipos.cotizacion">Cotizacion</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="equiposcotizadosToEquipos.id"><span jhiTranslate="hometechclaimApp.equiposcotizadosToEquipos.equiposcotizadosToEquipos">Equiposcotizados To Equipos</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let equiposcotizadosToEquipos of equiposcotizadosToEquipos ;trackBy: trackId">
+                    <td><a [routerLink]="['/equiposcotizados-to-equipos', equiposcotizadosToEquipos.id, 'view']">{{ equiposcotizadosToEquipos.id }}</a></td>
+                    <td>{{ equiposcotizadosToEquipos.valorUnidad }}</td>
+                    <td>{{ equiposcotizadosToEquipos.valorUtilUnidad }}</td>
+                    <td>{{ equiposcotizadosToEquipos.descuentoUnidad }}</td>
+                    <td>{{ equiposcotizadosToEquipos.fechacotizacion | date:'medium' }}</td>
+                    <td>{{ equiposcotizadosToEquipos.cantidadEquipos }}</td>
+                    <td>
+                        <div *ngIf="equiposcotizadosToEquipos.cotizacion">
+                            <a [routerLink]="['/cotizacion', equiposcotizadosToEquipos.cotizacion?.id, 'view']" >{{ equiposcotizadosToEquipos.cotizacion?.id }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="equiposcotizadosToEquipos.equiposcotizadosToEquipos">
+                            <a [routerLink]="['/equipo', equiposcotizadosToEquipos.equiposcotizadosToEquipos?.id, 'view']" >{{ equiposcotizadosToEquipos.equiposcotizadosToEquipos?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/equiposcotizados-to-equipos', equiposcotizadosToEquipos.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/equiposcotizados-to-equipos', equiposcotizadosToEquipos.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(equiposcotizadosToEquipos)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="equiposcotizadosToEquipos?.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>

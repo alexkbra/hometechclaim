@@ -1,0 +1,10 @@
+{
+  "hometechclaimApp": {
+    "Areas": {
+      "null": "",
+      "SRVICIOALCLIENTE": "SRVICIOALCLIENTE",
+      "AREATECNICA": "AREATECNICA",
+      "GERENCIA": "GERENCIA"
+    }
+  }
+}

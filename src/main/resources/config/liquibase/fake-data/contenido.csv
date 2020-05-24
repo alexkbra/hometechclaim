@@ -1,0 +1,11 @@
+id;descripcion;video_url;imagen_u_rl;imagen_u_rl_content_type;audio;tipo_contenido;activo;fechacreacion;novedad_id
+1;../fake-data/blob/hipster.txt;Costa Rican Colon;../fake-data/blob/hipster.png;image/png;Soft;VIDEO;false;2020-04-07T10:50:43;1
+2;../fake-data/blob/hipster.txt;Gloves;../fake-data/blob/hipster.png;image/png;Turnpike Zimbabwe Group;VIDEO;false;2020-04-07T14:04:35;2
+3;../fake-data/blob/hipster.txt;XML;../fake-data/blob/hipster.png;image/png;Somali Shilling invoice;VIDEO;false;2020-04-07T18:56:56;3
+4;../fake-data/blob/hipster.txt;SSL Garden Cedi;../fake-data/blob/hipster.png;image/png;Jewelery Libyan Dinar;AUDIO;true;2020-04-08T01:16:09;4
+5;../fake-data/blob/hipster.txt;proactive demand-driven;../fake-data/blob/hipster.png;image/png;Bike;IMAGEN;true;2020-04-07T08:44:09;5
+6;../fake-data/blob/hipster.txt;markets implement;../fake-data/blob/hipster.png;image/png;moratorium Buckinghamshire Dynamic;IMAGEN;false;2020-04-07T23:47:11;6
+7;../fake-data/blob/hipster.txt;optical;../fake-data/blob/hipster.png;image/png;matrix;VIDEO;true;2020-04-07T16:20:24;7
+8;../fake-data/blob/hipster.txt;Arkansas interface matrix;../fake-data/blob/hipster.png;image/png;Tasty;AUDIO;false;2020-04-07T16:30:17;8
+9;../fake-data/blob/hipster.txt;Credit Card Account withdrawal Granite;../fake-data/blob/hipster.png;image/png;Pizza Ridge;AUDIO;false;2020-04-07T23:16:49;9
+10;../fake-data/blob/hipster.txt;content;../fake-data/blob/hipster.png;image/png;Iraqi Dinar;AUDIO;false;2020-04-07T15:17:56;10

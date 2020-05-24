@@ -1,0 +1,28 @@
+{
+  "hometechclaimApp": {
+    "solucion": {
+      "home": {
+        "title": "Solucions",
+        "createLabel": "Create a new Solucion",
+        "createOrEditLabel": "Create or edit a Solucion",
+        "notFound": "No Solucions found"
+      },
+      "created": "A new Solucion is created with identifier {{ param }}",
+      "updated": "A Solucion is updated with identifier {{ param }}",
+      "deleted": "A Solucion is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Solucion {{ id }}?"
+      },
+      "detail": {
+        "title": "Solucion"
+      },
+      "nombre": "Nombre",
+      "descripcion": "Descripcion",
+      "code": "Code",
+      "imagenUrl": "Imagen Url",
+      "requerimientoToSolucion": "Requerimiento To Solucion",
+      "tipoEquipo": "Tipo Equipo",
+      "tipoSolucion": "Tipo Solucion"
+    }
+  }
+}

@@ -1,0 +1,83 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="hometechclaimApp.colaboradores.home.title">Colaboradores</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-colaboradores" [routerLink]="['/colaboradores/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="hometechclaimApp.colaboradores.home.createLabel">
+            Create a new Colaboradores
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="colaboradores?.length === 0">
+        <span jhiTranslate="hometechclaimApp.colaboradores.home.notFound">No colaboradores found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="colaboradores?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="nombre"><span jhiTranslate="hometechclaimApp.colaboradores.nombre">Nombre</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="correo"><span jhiTranslate="hometechclaimApp.colaboradores.correo">Correo</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="activo"><span jhiTranslate="hometechclaimApp.colaboradores.activo">Activo</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="idusuario"><span jhiTranslate="hometechclaimApp.colaboradores.idusuario">Idusuario</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dealer.id"><span jhiTranslate="hometechclaimApp.colaboradores.dealer">Dealer</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let colaboradores of colaboradores ;trackBy: trackId">
+                    <td><a [routerLink]="['/colaboradores', colaboradores.id, 'view']">{{ colaboradores.id }}</a></td>
+                    <td>{{ colaboradores.nombre }}</td>
+                    <td>{{ colaboradores.correo }}</td>
+                    <td>{{ colaboradores.activo }}</td>
+                    <td>{{ colaboradores.idusuario }}</td>
+                    <td>
+                        <div *ngIf="colaboradores.dealer">
+                            <a [routerLink]="['/dealer', colaboradores.dealer?.id, 'view']" >{{ colaboradores.dealer?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/colaboradores', colaboradores.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/colaboradores', colaboradores.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(colaboradores)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="colaboradores?.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>

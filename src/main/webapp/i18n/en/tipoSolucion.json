@@ -1,0 +1,25 @@
+{
+  "hometechclaimApp": {
+    "tipoSolucion": {
+      "home": {
+        "title": "Tipo Solucions",
+        "createLabel": "Create a new Tipo Solucion",
+        "createOrEditLabel": "Create or edit a Tipo Solucion",
+        "notFound": "No Tipo Solucions found"
+      },
+      "created": "A new Tipo Solucion is created with identifier {{ param }}",
+      "updated": "A Tipo Solucion is updated with identifier {{ param }}",
+      "deleted": "A Tipo Solucion is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Tipo Solucion {{ id }}?"
+      },
+      "detail": {
+        "title": "Tipo Solucion"
+      },
+      "nombre": "Nombre",
+      "code": "Code",
+      "imagenUrl": "Imagen Url",
+      "solucion": "Solucion"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="colaboradores">
+            <h2><span jhiTranslate="hometechclaimApp.colaboradores.detail.title">Colaboradores</span> {{ colaboradores.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="hometechclaimApp.colaboradores.nombre">Nombre</span></dt>
+                <dd>
+                    <span>{{ colaboradores.nombre }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.colaboradores.correo">Correo</span></dt>
+                <dd>
+                    <span>{{ colaboradores.correo }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.colaboradores.activo">Activo</span></dt>
+                <dd>
+                    <span>{{ colaboradores.activo }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.colaboradores.idusuario">Idusuario</span></dt>
+                <dd>
+                    <span>{{ colaboradores.idusuario }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.colaboradores.dealer">Dealer</span></dt>
+                <dd>
+                    <div *ngIf="colaboradores.dealer">
+                        <a [routerLink]="['/dealer', colaboradores.dealer?.id, 'view']">{{ colaboradores.dealer?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/colaboradores', colaboradores.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

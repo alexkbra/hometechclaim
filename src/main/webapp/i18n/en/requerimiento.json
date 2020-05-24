@@ -1,0 +1,32 @@
+{
+  "hometechclaimApp": {
+    "requerimiento": {
+      "home": {
+        "title": "Requerimientos",
+        "createLabel": "Create a new Requerimiento",
+        "createOrEditLabel": "Create or edit a Requerimiento",
+        "notFound": "No Requerimientos found"
+      },
+      "created": "A new Requerimiento is created with identifier {{ param }}",
+      "updated": "A Requerimiento is updated with identifier {{ param }}",
+      "deleted": "A Requerimiento is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Requerimiento {{ id }}?"
+      },
+      "detail": {
+        "title": "Requerimiento"
+      },
+      "detalleproblema": "Detalleproblema",
+      "fechacreacion": "Fechacreacion",
+      "fechaactualizacion": "Fechaactualizacion",
+      "observaciones": "Observaciones",
+      "idusuarioatendio": "Idusuarioatendio",
+      "idusuarioactualizo": "Idusuarioactualizo",
+      "idUsuario": "Id Usuario",
+      "imagen": "Imagen",
+      "estadoRequerimiento": "Estado Requerimiento",
+      "tipoRequerimiento": "Tipo Requerimiento",
+      "requerimientoToSolucion": "Requerimiento To Solucion"
+    }
+  }
+}

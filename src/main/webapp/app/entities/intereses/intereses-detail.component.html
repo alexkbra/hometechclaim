@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="intereses">
+            <h2><span jhiTranslate="hometechclaimApp.intereses.detail.title">Intereses</span> {{ intereses.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="hometechclaimApp.intereses.nombre">Nombre</span></dt>
+                <dd>
+                    <span>{{ intereses.nombre }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.intereses.descripcion">Descripcion</span></dt>
+                <dd>
+                    <span>{{ intereses.descripcion }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.intereses.imagen">Imagen</span></dt>
+                <dd>
+                    <span>{{ intereses.imagen }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.intereses.code">Code</span></dt>
+                <dd>
+                    <span>{{ intereses.code }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/intereses', intereses.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

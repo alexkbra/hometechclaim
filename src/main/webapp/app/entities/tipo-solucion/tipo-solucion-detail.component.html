@@ -1,0 +1,43 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="tipoSolucion">
+            <h2><span jhiTranslate="hometechclaimApp.tipoSolucion.detail.title">Tipo Solucion</span> {{ tipoSolucion.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="hometechclaimApp.tipoSolucion.nombre">Nombre</span></dt>
+                <dd>
+                    <span>{{ tipoSolucion.nombre }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.tipoSolucion.code">Code</span></dt>
+                <dd>
+                    <span>{{ tipoSolucion.code }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.tipoSolucion.imagenUrl">Imagen Url</span></dt>
+                <dd>
+                    <div *ngIf="tipoSolucion.imagenUrl">
+                        <a (click)="openFile(tipoSolucion.imagenUrlContentType!, tipoSolucion.imagenUrl)">
+                            <img [src]="'data:' + tipoSolucion.imagenUrlContentType + ';base64,' + tipoSolucion.imagenUrl" style="max-width: 100%;" alt="tipoSolucion image"/>
+                        </a>
+                        {{ tipoSolucion.imagenUrlContentType }}, {{ byteSize(tipoSolucion.imagenUrl) }}
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/tipo-solucion', tipoSolucion.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

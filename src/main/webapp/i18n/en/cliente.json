@@ -1,0 +1,39 @@
+{
+  "hometechclaimApp": {
+    "cliente": {
+      "home": {
+        "title": "Clientes",
+        "createLabel": "Create a new Cliente",
+        "createOrEditLabel": "Create or edit a Cliente",
+        "notFound": "No Clientes found"
+      },
+      "created": "A new Cliente is created with identifier {{ param }}",
+      "updated": "A Cliente is updated with identifier {{ param }}",
+      "deleted": "A Cliente is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Cliente {{ id }}?"
+      },
+      "detail": {
+        "title": "Cliente"
+      },
+      "nombre": "Nombre",
+      "apellido": "Apellido",
+      "correo": "Correo",
+      "codigoDealer": "Codigo Dealer",
+      "idciudad": "Idciudad",
+      "telefonocelular": "Telefonocelular",
+      "telefonofijo": "Telefonofijo",
+      "telefonoempresarial": "Telefonoempresarial",
+      "direccionresidencial": "Direccionresidencial",
+      "direccionempresarial": "Direccionempresarial",
+      "fechanacimiento": "Fechanacimiento",
+      "idusuario": "Idusuario",
+      "imagen": "Imagen",
+      "interesesToCliente": "Intereses To Cliente",
+      "novedadToCliente": "Novedad To Cliente",
+      "equiposinstalados": "Equiposinstalados",
+      "cotizacion": "Cotizacion",
+      "dealer": "Dealer"
+    }
+  }
+}

@@ -1,0 +1,91 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="hometechclaimApp.dealer.home.title">Dealers</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-dealer" [routerLink]="['/dealer/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="hometechclaimApp.dealer.home.createLabel">
+            Create a new Dealer
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="dealers?.length === 0">
+        <span jhiTranslate="hometechclaimApp.dealer.home.notFound">No dealers found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="dealers?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="nombre"><span jhiTranslate="hometechclaimApp.dealer.nombre">Nombre</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="correo"><span jhiTranslate="hometechclaimApp.dealer.correo">Correo</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="codigo"><span jhiTranslate="hometechclaimApp.dealer.codigo">Codigo</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="idciudad"><span jhiTranslate="hometechclaimApp.dealer.idciudad">Idciudad</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="direccion"><span jhiTranslate="hometechclaimApp.dealer.direccion">Direccion</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="telefonofijo"><span jhiTranslate="hometechclaimApp.dealer.telefonofijo">Telefonofijo</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="telefonocelular"><span jhiTranslate="hometechclaimApp.dealer.telefonocelular">Telefonocelular</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="idusuario"><span jhiTranslate="hometechclaimApp.dealer.idusuario">Idusuario</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="comerciales.id"><span jhiTranslate="hometechclaimApp.dealer.comerciales">Comerciales</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let dealer of dealers ;trackBy: trackId">
+                    <td><a [routerLink]="['/dealer', dealer.id, 'view']">{{ dealer.id }}</a></td>
+                    <td>{{ dealer.nombre }}</td>
+                    <td>{{ dealer.correo }}</td>
+                    <td>{{ dealer.codigo }}</td>
+                    <td>{{ dealer.idciudad }}</td>
+                    <td>{{ dealer.direccion }}</td>
+                    <td>{{ dealer.telefonofijo }}</td>
+                    <td>{{ dealer.telefonocelular }}</td>
+                    <td>{{ dealer.idusuario }}</td>
+                    <td>
+                        <div *ngIf="dealer.comerciales">
+                            <a [routerLink]="['/comerciales', dealer.comerciales?.id, 'view']" >{{ dealer.comerciales?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/dealer', dealer.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/dealer', dealer.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(dealer)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="dealers?.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>

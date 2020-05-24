@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="notificaciones">
+            <h2><span jhiTranslate="hometechclaimApp.notificaciones.detail.title">Notificaciones</span> {{ notificaciones.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="hometechclaimApp.notificaciones.correo">Correo</span></dt>
+                <dd>
+                    <span>{{ notificaciones.correo }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.notificaciones.area">Area</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'hometechclaimApp.Areas.' + notificaciones.area }}">{{ notificaciones.area }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.notificaciones.activo">Activo</span></dt>
+                <dd>
+                    <span>{{ notificaciones.activo }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.notificaciones.idusuario">Idusuario</span></dt>
+                <dd>
+                    <span>{{ notificaciones.idusuario }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/notificaciones', notificaciones.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

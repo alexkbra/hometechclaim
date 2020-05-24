@@ -1,0 +1,89 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="cliente">
+            <h2><span jhiTranslate="hometechclaimApp.cliente.detail.title">Cliente</span> {{ cliente.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="hometechclaimApp.cliente.nombre">Nombre</span></dt>
+                <dd>
+                    <span>{{ cliente.nombre }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.cliente.apellido">Apellido</span></dt>
+                <dd>
+                    <span>{{ cliente.apellido }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.cliente.correo">Correo</span></dt>
+                <dd>
+                    <span>{{ cliente.correo }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.cliente.codigoDealer">Codigo Dealer</span></dt>
+                <dd>
+                    <span>{{ cliente.codigoDealer }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.cliente.idciudad">Idciudad</span></dt>
+                <dd>
+                    <span>{{ cliente.idciudad }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.cliente.telefonocelular">Telefonocelular</span></dt>
+                <dd>
+                    <span>{{ cliente.telefonocelular }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.cliente.telefonofijo">Telefonofijo</span></dt>
+                <dd>
+                    <span>{{ cliente.telefonofijo }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.cliente.telefonoempresarial">Telefonoempresarial</span></dt>
+                <dd>
+                    <span>{{ cliente.telefonoempresarial }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.cliente.direccionresidencial">Direccionresidencial</span></dt>
+                <dd>
+                    <span>{{ cliente.direccionresidencial }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.cliente.direccionempresarial">Direccionempresarial</span></dt>
+                <dd>
+                    <span>{{ cliente.direccionempresarial }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.cliente.fechanacimiento">Fechanacimiento</span></dt>
+                <dd>
+                    <span>{{ cliente.fechanacimiento }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.cliente.idusuario">Idusuario</span></dt>
+                <dd>
+                    <span>{{ cliente.idusuario }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.cliente.imagen">Imagen</span></dt>
+                <dd>
+                    <div *ngIf="cliente.imagen">
+                        <a (click)="openFile(cliente.imagenContentType!, cliente.imagen)">
+                            <img [src]="'data:' + cliente.imagenContentType + ';base64,' + cliente.imagen" style="max-width: 100%;" alt="cliente image"/>
+                        </a>
+                        {{ cliente.imagenContentType }}, {{ byteSize(cliente.imagen) }}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.cliente.dealer">Dealer</span></dt>
+                <dd>
+                    <div *ngIf="cliente.dealer">
+                        <a [routerLink]="['/dealer', cliente.dealer?.id, 'view']">{{ cliente.dealer?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/cliente', cliente.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

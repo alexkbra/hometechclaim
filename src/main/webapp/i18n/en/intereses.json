@@ -1,0 +1,26 @@
+{
+  "hometechclaimApp": {
+    "intereses": {
+      "home": {
+        "title": "Intereses",
+        "createLabel": "Create a new Intereses",
+        "createOrEditLabel": "Create or edit a Intereses",
+        "notFound": "No Intereses found"
+      },
+      "created": "A new Intereses is created with identifier {{ param }}",
+      "updated": "A Intereses is updated with identifier {{ param }}",
+      "deleted": "A Intereses is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Intereses {{ id }}?"
+      },
+      "detail": {
+        "title": "Intereses"
+      },
+      "nombre": "Nombre",
+      "descripcion": "Descripcion",
+      "imagen": "Imagen",
+      "code": "Code",
+      "interesesToCliente": "Intereses To Cliente"
+    }
+  }
+}

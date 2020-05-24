@@ -1,0 +1,68 @@
+{
+    "name": "EquiposcotizadosToEquipos",
+    "fields": [
+        {
+            "fieldName": "valorUnidad",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "valorUtilUnidad",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "descuentoUnidad",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "fechacotizacion",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "cantidadEquipos",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "cotizacion",
+            "otherEntityRelationshipName": "equiposcotizadosToEquipos",
+            "relationshipValidateRules": "required",
+            "relationshipName": "cotizacion",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "equipo",
+            "otherEntityRelationshipName": "equiposcotizadosToEquipos",
+            "relationshipValidateRules": "required",
+            "relationshipName": "equiposcotizadosToEquipos",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200408035500",
+    "entityTableName": "equiposcotizados_to_equipos",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

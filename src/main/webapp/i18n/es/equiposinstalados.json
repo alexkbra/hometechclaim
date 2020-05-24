@@ -1,0 +1,29 @@
+{
+  "hometechclaimApp": {
+    "equiposinstalados": {
+      "home": {
+        "title": "Equiposinstalados",
+        "createLabel": "Crear nuevo Equiposinstalados",
+        "createOrEditLabel": "Crear o editar Equiposinstalados",
+        "notFound": "Ningún Equiposinstalados encontrado"
+      },
+      "created": "Un nuevo Equiposinstalados ha sido creado con el identificador {{ param }}",
+      "updated": "Un Equiposinstalados ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Equiposinstalados ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Equiposinstalados {{ id }}?"
+      },
+      "detail": {
+        "title": "Equiposinstalados"
+      },
+      "descripcion": "Descripcion",
+      "observacion": "Observacion",
+      "fechainstalacion": "Fechainstalacion",
+      "posibleactuliazcion": "Posibleactuliazcion",
+      "cantidad": "Cantidad",
+      "cliente": "Cliente",
+      "equipo": "Equipo",
+      "proyecto": "Proyecto"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "hometechclaimApp": {
+    "notificaciones": {
+      "home": {
+        "title": "Notificaciones",
+        "createLabel": "Crear nuevo Notificaciones",
+        "createOrEditLabel": "Crear o editar Notificaciones",
+        "notFound": "Ningún Notificaciones encontrado"
+      },
+      "created": "Un nuevo Notificaciones ha sido creado con el identificador {{ param }}",
+      "updated": "Un Notificaciones ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Notificaciones ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Notificaciones {{ id }}?"
+      },
+      "detail": {
+        "title": "Notificaciones"
+      },
+      "correo": "Correo",
+      "area": "Area",
+      "activo": "Activo",
+      "idusuario": "Idusuario"
+    }
+  }
+}

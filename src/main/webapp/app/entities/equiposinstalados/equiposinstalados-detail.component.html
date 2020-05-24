@@ -1,0 +1,64 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="equiposinstalados">
+            <h2><span jhiTranslate="hometechclaimApp.equiposinstalados.detail.title">Equiposinstalados</span> {{ equiposinstalados.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="hometechclaimApp.equiposinstalados.descripcion">Descripcion</span></dt>
+                <dd>
+                    <span>{{ equiposinstalados.descripcion }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.equiposinstalados.observacion">Observacion</span></dt>
+                <dd>
+                    <span>{{ equiposinstalados.observacion }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.equiposinstalados.fechainstalacion">Fechainstalacion</span></dt>
+                <dd>
+                    <span>{{ equiposinstalados.fechainstalacion }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.equiposinstalados.posibleactuliazcion">Posibleactuliazcion</span></dt>
+                <dd>
+                    <span>{{ equiposinstalados.posibleactuliazcion }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.equiposinstalados.cantidad">Cantidad</span></dt>
+                <dd>
+                    <span>{{ equiposinstalados.cantidad }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.equiposinstalados.cliente">Cliente</span></dt>
+                <dd>
+                    <div *ngIf="equiposinstalados.cliente">
+                        <a [routerLink]="['/cliente', equiposinstalados.cliente?.id, 'view']">{{ equiposinstalados.cliente?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.equiposinstalados.equipo">Equipo</span></dt>
+                <dd>
+                    <div *ngIf="equiposinstalados.equipo">
+                        <a [routerLink]="['/equipo', equiposinstalados.equipo?.id, 'view']">{{ equiposinstalados.equipo?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.equiposinstalados.proyecto">Proyecto</span></dt>
+                <dd>
+                    <div *ngIf="equiposinstalados.proyecto">
+                        <a [routerLink]="['/proyecto', equiposinstalados.proyecto?.id, 'view']">{{ equiposinstalados.proyecto?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/equiposinstalados', equiposinstalados.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

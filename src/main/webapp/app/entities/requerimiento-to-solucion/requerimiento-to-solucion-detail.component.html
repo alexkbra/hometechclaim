@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="requerimientoToSolucion">
+            <h2><span jhiTranslate="hometechclaimApp.requerimientoToSolucion.detail.title">Requerimiento To Solucion</span> {{ requerimientoToSolucion.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="hometechclaimApp.requerimientoToSolucion.fechacreacion">Fechacreacion</span></dt>
+                <dd>
+                    <span>{{ requerimientoToSolucion.fechacreacion }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.requerimientoToSolucion.requerimiento">Requerimiento</span></dt>
+                <dd>
+                    <div *ngIf="requerimientoToSolucion.requerimiento">
+                        <a [routerLink]="['/requerimiento', requerimientoToSolucion.requerimiento?.id, 'view']">{{ requerimientoToSolucion.requerimiento?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.requerimientoToSolucion.solucion">Solucion</span></dt>
+                <dd>
+                    <div *ngIf="requerimientoToSolucion.solucion">
+                        <a [routerLink]="['/solucion', requerimientoToSolucion.solucion?.id, 'view']">{{ requerimientoToSolucion.solucion?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/requerimiento-to-solucion', requerimientoToSolucion.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

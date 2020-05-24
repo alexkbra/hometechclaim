@@ -1,0 +1,40 @@
+{
+    "name": "RequerimientoToSolucion",
+    "fields": [
+        {
+            "fieldName": "fechacreacion",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "requerimiento",
+            "otherEntityRelationshipName": "requerimientoToSolucion",
+            "relationshipValidateRules": "required",
+            "relationshipName": "requerimiento",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "solucion",
+            "otherEntityRelationshipName": "requerimientoToSolucion",
+            "relationshipValidateRules": "required",
+            "relationshipName": "solucion",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200408035700",
+    "entityTableName": "requerimiento_to_solucion",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

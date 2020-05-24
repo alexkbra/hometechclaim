@@ -1,0 +1,10 @@
+{
+  "hometechclaimApp": {
+    "TipoContenido": {
+      "null": "",
+      "VIDEO": "VIDEO",
+      "IMAGEN": "IMAGEN",
+      "AUDIO": "AUDIO"
+    }
+  }
+}

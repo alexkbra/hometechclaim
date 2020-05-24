@@ -1,0 +1,68 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="cotizacion">
+            <h2><span jhiTranslate="hometechclaimApp.cotizacion.detail.title">Cotizacion</span> {{ cotizacion.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="hometechclaimApp.cotizacion.fechacreacion">Fechacreacion</span></dt>
+                <dd>
+                    <span>{{ cotizacion.fechacreacion }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.cotizacion.descripcion">Descripcion</span></dt>
+                <dd>
+                    <span>{{ cotizacion.descripcion }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.cotizacion.valoriva">Valoriva</span></dt>
+                <dd>
+                    <span>{{ cotizacion.valoriva }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.cotizacion.totalsiniva">Totalsiniva</span></dt>
+                <dd>
+                    <span>{{ cotizacion.totalsiniva }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.cotizacion.porcentajedescuento">Porcentajedescuento</span></dt>
+                <dd>
+                    <span>{{ cotizacion.porcentajedescuento }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.cotizacion.fechamantenimiento">Fechamantenimiento</span></dt>
+                <dd>
+                    <span>{{ cotizacion.fechamantenimiento }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.cotizacion.activo">Activo</span></dt>
+                <dd>
+                    <span>{{ cotizacion.activo }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.cotizacion.total">Total</span></dt>
+                <dd>
+                    <span>{{ cotizacion.total }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.cotizacion.estadocotizacion">Estadocotizacion</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'hometechclaimApp.Estadocotizacion.' + cotizacion.estadocotizacion }}">{{ cotizacion.estadocotizacion }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.cotizacion.cliente">Cliente</span></dt>
+                <dd>
+                    <div *ngIf="cotizacion.cliente">
+                        <a [routerLink]="['/cliente', cotizacion.cliente?.id, 'view']">{{ cotizacion.cliente?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/cotizacion', cotizacion.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

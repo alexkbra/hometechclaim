@@ -1,0 +1,64 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="dealer">
+            <h2><span jhiTranslate="hometechclaimApp.dealer.detail.title">Dealer</span> {{ dealer.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="hometechclaimApp.dealer.nombre">Nombre</span></dt>
+                <dd>
+                    <span>{{ dealer.nombre }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.dealer.correo">Correo</span></dt>
+                <dd>
+                    <span>{{ dealer.correo }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.dealer.codigo">Codigo</span></dt>
+                <dd>
+                    <span>{{ dealer.codigo }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.dealer.idciudad">Idciudad</span></dt>
+                <dd>
+                    <span>{{ dealer.idciudad }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.dealer.direccion">Direccion</span></dt>
+                <dd>
+                    <span>{{ dealer.direccion }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.dealer.telefonofijo">Telefonofijo</span></dt>
+                <dd>
+                    <span>{{ dealer.telefonofijo }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.dealer.telefonocelular">Telefonocelular</span></dt>
+                <dd>
+                    <span>{{ dealer.telefonocelular }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.dealer.idusuario">Idusuario</span></dt>
+                <dd>
+                    <span>{{ dealer.idusuario }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.dealer.comerciales">Comerciales</span></dt>
+                <dd>
+                    <div *ngIf="dealer.comerciales">
+                        <a [routerLink]="['/comerciales', dealer.comerciales?.id, 'view']">{{ dealer.comerciales?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/dealer', dealer.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,58 @@
+{
+    "name": "Marca",
+    "fields": [
+        {
+            "fieldName": "nombre",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength",
+                "required"
+            ],
+            "fieldValidateRulesMinlength": "5",
+            "fieldValidateRulesMaxlength": "100"
+        },
+        {
+            "fieldName": "imagenUrl",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "code",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength",
+                "required"
+            ],
+            "fieldValidateRulesMinlength": "2",
+            "fieldValidateRulesMaxlength": "10"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "equipo",
+            "otherEntityRelationshipName": "marca",
+            "relationshipName": "equipo"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "tipoEquipo",
+            "otherEntityRelationshipName": "marca",
+            "relationshipValidateRules": "required",
+            "relationshipName": "tipoEquipo",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200408040100",
+    "entityTableName": "marca",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

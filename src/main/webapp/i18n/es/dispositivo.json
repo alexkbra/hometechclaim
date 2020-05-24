@@ -1,0 +1,26 @@
+{
+  "hometechclaimApp": {
+    "dispositivo": {
+      "home": {
+        "title": "Dispositivos",
+        "createLabel": "Crear nuevo Dispositivo",
+        "createOrEditLabel": "Crear o editar Dispositivo",
+        "notFound": "Ningún Dispositivos encontrado"
+      },
+      "created": "Un nuevo Dispositivo ha sido creado con el identificador {{ param }}",
+      "updated": "Un Dispositivo ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Dispositivo ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Dispositivo {{ id }}?"
+      },
+      "detail": {
+        "title": "Dispositivo"
+      },
+      "idusuario": "Idusuario",
+      "idcliente": "Idcliente",
+      "iddealer": "Iddealer",
+      "activo": "Activo",
+      "dispositivo": "Dispositivo"
+    }
+  }
+}

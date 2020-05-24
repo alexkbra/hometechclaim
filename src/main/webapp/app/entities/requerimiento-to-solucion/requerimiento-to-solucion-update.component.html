@@ -1,0 +1,71 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-requerimiento-to-solucion-heading" jhiTranslate="hometechclaimApp.requerimientoToSolucion.home.createOrEditLabel">Create or edit a Requerimiento To Solucion</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hometechclaimApp.requerimientoToSolucion.fechacreacion" for="field_fechacreacion">Fechacreacion</label>
+                    <div class="d-flex">
+                        <input id="field_fechacreacion" type="datetime-local" class="form-control" name="fechacreacion" formControlName="fechacreacion" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                    <div *ngIf="editForm.get('fechacreacion')!.invalid && (editForm.get('fechacreacion')!.dirty || editForm.get('fechacreacion')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('fechacreacion')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('fechacreacion')?.errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                            This field should be a date and time.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hometechclaimApp.requerimientoToSolucion.requerimiento" for="field_requerimiento">Requerimiento</label>
+                    <select class="form-control" id="field_requerimiento" name="requerimiento" formControlName="requerimiento">
+                        <option *ngIf="!editForm.get('requerimiento')!.value" [ngValue]="null" selected></option>
+                        <option [ngValue]="requerimientoOption.id === editForm.get('requerimiento')!.value?.id ? editForm.get('requerimiento')!.value : requerimientoOption" *ngFor="let requerimientoOption of requerimientos; trackBy: trackById">{{ requerimientoOption.id }}</option>
+                    </select>
+                </div>
+                <div *ngIf="editForm.get('requerimiento')!.invalid && (editForm.get('requerimiento')!.dirty || editForm.get('requerimiento')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('requerimiento')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hometechclaimApp.requerimientoToSolucion.solucion" for="field_solucion">Solucion</label>
+                    <select class="form-control" id="field_solucion" name="solucion" formControlName="solucion">
+                        <option *ngIf="!editForm.get('solucion')!.value" [ngValue]="null" selected></option>
+                        <option [ngValue]="solucionOption.id === editForm.get('solucion')!.value?.id ? editForm.get('solucion')!.value : solucionOption" *ngFor="let solucionOption of solucions; trackBy: trackById">{{ solucionOption.id }}</option>
+                    </select>
+                </div>
+                <div *ngIf="editForm.get('solucion')!.invalid && (editForm.get('solucion')!.dirty || editForm.get('solucion')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('solucion')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

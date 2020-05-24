@@ -1,0 +1,11 @@
+{
+  "hometechclaimApp": {
+    "Estadocotizacion": {
+      "null": "",
+      "INICIO": "INICIO",
+      "ENPROCESO": "ENPROCESO",
+      "INSTALADO": "INSTALADO",
+      "TERMINADA": "TERMINADA"
+    }
+  }
+}

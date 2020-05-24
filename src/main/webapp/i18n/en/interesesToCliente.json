@@ -1,0 +1,24 @@
+{
+  "hometechclaimApp": {
+    "interesesToCliente": {
+      "home": {
+        "title": "Intereses To Clientes",
+        "createLabel": "Create a new Intereses To Cliente",
+        "createOrEditLabel": "Create or edit a Intereses To Cliente",
+        "notFound": "No Intereses To Clientes found"
+      },
+      "created": "A new Intereses To Cliente is created with identifier {{ param }}",
+      "updated": "A Intereses To Cliente is updated with identifier {{ param }}",
+      "deleted": "A Intereses To Cliente is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Intereses To Cliente {{ id }}?"
+      },
+      "detail": {
+        "title": "Intereses To Cliente"
+      },
+      "fechacreacion": "Fechacreacion",
+      "cliente": "Cliente",
+      "intereses": "Intereses"
+    }
+  }
+}

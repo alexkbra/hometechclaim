@@ -1,0 +1,24 @@
+{
+  "hometechclaimApp": {
+    "novedadToCliente": {
+      "home": {
+        "title": "Novedad To Clientes",
+        "createLabel": "Crear nuevo Novedad To Cliente",
+        "createOrEditLabel": "Crear o editar Novedad To Cliente",
+        "notFound": "Ningún Novedad To Clientes encontrado"
+      },
+      "created": "Un nuevo Novedad To Cliente ha sido creado con el identificador {{ param }}",
+      "updated": "Un Novedad To Cliente ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Novedad To Cliente ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Novedad To Cliente {{ id }}?"
+      },
+      "detail": {
+        "title": "Novedad To Cliente"
+      },
+      "fechacreacion": "Fechacreacion",
+      "novedad": "Novedad",
+      "cliente": "Cliente"
+    }
+  }
+}

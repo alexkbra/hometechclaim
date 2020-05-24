@@ -1,0 +1,65 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="equipo">
+            <h2><span jhiTranslate="hometechclaimApp.equipo.detail.title">Equipo</span> {{ equipo.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="hometechclaimApp.equipo.nombre">Nombre</span></dt>
+                <dd>
+                    <span>{{ equipo.nombre }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.equipo.version">Version</span></dt>
+                <dd>
+                    <span>{{ equipo.version }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.equipo.controlador">Controlador</span></dt>
+                <dd>
+                    <span>{{ equipo.controlador }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.equipo.accountname">Accountname</span></dt>
+                <dd>
+                    <span>{{ equipo.accountname }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.equipo.controllermacaddress">Controllermacaddress</span></dt>
+                <dd>
+                    <span>{{ equipo.controllermacaddress }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.equipo.imagenUrl">Imagen Url</span></dt>
+                <dd>
+                    <div *ngIf="equipo.imagenUrl">
+                        <a (click)="openFile(equipo.imagenUrlContentType!, equipo.imagenUrl)">
+                            <img [src]="'data:' + equipo.imagenUrlContentType + ';base64,' + equipo.imagenUrl" style="max-width: 100%;" alt="equipo image"/>
+                        </a>
+                        {{ equipo.imagenUrlContentType }}, {{ byteSize(equipo.imagenUrl) }}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.equipo.valor">Valor</span></dt>
+                <dd>
+                    <span>{{ equipo.valor }}</span>
+                </dd>
+                <dt><span jhiTranslate="hometechclaimApp.equipo.marca">Marca</span></dt>
+                <dd>
+                    <div *ngIf="equipo.marca">
+                        <a [routerLink]="['/marca', equipo.marca?.id, 'view']">{{ equipo.marca?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/equipo', equipo.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,135 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-equiposcotizados-to-equipos-heading" jhiTranslate="hometechclaimApp.equiposcotizadosToEquipos.home.createOrEditLabel">Create or edit a Equiposcotizados To Equipos</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hometechclaimApp.equiposcotizadosToEquipos.valorUnidad" for="field_valorUnidad">Valor Unidad</label>
+                    <input type="number" class="form-control" name="valorUnidad" id="field_valorUnidad"
+                           formControlName="valorUnidad"/>
+                    <div *ngIf="editForm.get('valorUnidad')!.invalid && (editForm.get('valorUnidad')!.dirty || editForm.get('valorUnidad')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('valorUnidad')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('valorUnidad')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hometechclaimApp.equiposcotizadosToEquipos.valorUtilUnidad" for="field_valorUtilUnidad">Valor Util Unidad</label>
+                    <input type="number" class="form-control" name="valorUtilUnidad" id="field_valorUtilUnidad"
+                           formControlName="valorUtilUnidad"/>
+                    <div *ngIf="editForm.get('valorUtilUnidad')!.invalid && (editForm.get('valorUtilUnidad')!.dirty || editForm.get('valorUtilUnidad')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('valorUtilUnidad')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('valorUtilUnidad')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hometechclaimApp.equiposcotizadosToEquipos.descuentoUnidad" for="field_descuentoUnidad">Descuento Unidad</label>
+                    <input type="number" class="form-control" name="descuentoUnidad" id="field_descuentoUnidad"
+                           formControlName="descuentoUnidad"/>
+                    <div *ngIf="editForm.get('descuentoUnidad')!.invalid && (editForm.get('descuentoUnidad')!.dirty || editForm.get('descuentoUnidad')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('descuentoUnidad')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('descuentoUnidad')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hometechclaimApp.equiposcotizadosToEquipos.fechacotizacion" for="field_fechacotizacion">Fechacotizacion</label>
+                    <div class="d-flex">
+                        <input id="field_fechacotizacion" type="datetime-local" class="form-control" name="fechacotizacion" formControlName="fechacotizacion" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                    <div *ngIf="editForm.get('fechacotizacion')!.invalid && (editForm.get('fechacotizacion')!.dirty || editForm.get('fechacotizacion')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('fechacotizacion')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('fechacotizacion')?.errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                            This field should be a date and time.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hometechclaimApp.equiposcotizadosToEquipos.cantidadEquipos" for="field_cantidadEquipos">Cantidad Equipos</label>
+                    <input type="number" class="form-control" name="cantidadEquipos" id="field_cantidadEquipos"
+                           formControlName="cantidadEquipos"/>
+                    <div *ngIf="editForm.get('cantidadEquipos')!.invalid && (editForm.get('cantidadEquipos')!.dirty || editForm.get('cantidadEquipos')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('cantidadEquipos')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('cantidadEquipos')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hometechclaimApp.equiposcotizadosToEquipos.cotizacion" for="field_cotizacion">Cotizacion</label>
+                    <select class="form-control" id="field_cotizacion" name="cotizacion" formControlName="cotizacion">
+                        <option *ngIf="!editForm.get('cotizacion')!.value" [ngValue]="null" selected></option>
+                        <option [ngValue]="cotizacionOption.id === editForm.get('cotizacion')!.value?.id ? editForm.get('cotizacion')!.value : cotizacionOption" *ngFor="let cotizacionOption of cotizacions; trackBy: trackById">{{ cotizacionOption.id }}</option>
+                    </select>
+                </div>
+                <div *ngIf="editForm.get('cotizacion')!.invalid && (editForm.get('cotizacion')!.dirty || editForm.get('cotizacion')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('cotizacion')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hometechclaimApp.equiposcotizadosToEquipos.equiposcotizadosToEquipos" for="field_equiposcotizadosToEquipos">Equiposcotizados To Equipos</label>
+                    <select class="form-control" id="field_equiposcotizadosToEquipos" name="equiposcotizadosToEquipos" formControlName="equiposcotizadosToEquipos">
+                        <option *ngIf="!editForm.get('equiposcotizadosToEquipos')!.value" [ngValue]="null" selected></option>
+                        <option [ngValue]="equipoOption.id === editForm.get('equiposcotizadosToEquipos')!.value?.id ? editForm.get('equiposcotizadosToEquipos')!.value : equipoOption" *ngFor="let equipoOption of equipos; trackBy: trackById">{{ equipoOption.id }}</option>
+                    </select>
+                </div>
+                <div *ngIf="editForm.get('equiposcotizadosToEquipos')!.invalid && (editForm.get('equiposcotizadosToEquipos')!.dirty || editForm.get('equiposcotizadosToEquipos')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('equiposcotizadosToEquipos')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

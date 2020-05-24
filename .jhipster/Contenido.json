@@ -1,0 +1,59 @@
+{
+    "name": "Contenido",
+    "fields": [
+        {
+            "fieldName": "descripcion",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "videoUrl",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "imagenURl",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "audio",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tipoContenido",
+            "fieldType": "TipoContenido",
+            "fieldValues": "VIDEO,IMAGEN,AUDIO"
+        },
+        {
+            "fieldName": "activo",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "fechacreacion",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "novedad",
+            "otherEntityRelationshipName": "contenido",
+            "relationshipValidateRules": "required",
+            "relationshipName": "novedad",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200408040400",
+    "entityTableName": "contenido",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

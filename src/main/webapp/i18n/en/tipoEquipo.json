@@ -1,0 +1,27 @@
+{
+  "hometechclaimApp": {
+    "tipoEquipo": {
+      "home": {
+        "title": "Tipo Equipos",
+        "createLabel": "Create a new Tipo Equipo",
+        "createOrEditLabel": "Create or edit a Tipo Equipo",
+        "notFound": "No Tipo Equipos found"
+      },
+      "created": "A new Tipo Equipo is created with identifier {{ param }}",
+      "updated": "A Tipo Equipo is updated with identifier {{ param }}",
+      "deleted": "A Tipo Equipo is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Tipo Equipo {{ id }}?"
+      },
+      "detail": {
+        "title": "Tipo Equipo"
+      },
+      "nombre": "Nombre",
+      "descripcion": "Descripcion",
+      "imagenUrl": "Imagen Url",
+      "code": "Code",
+      "marca": "Marca",
+      "solucion": "Solucion"
+    }
+  }
+}

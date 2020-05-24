@@ -1,0 +1,137 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-equiposinstalados-heading" jhiTranslate="hometechclaimApp.equiposinstalados.home.createOrEditLabel">Create or edit a Equiposinstalados</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hometechclaimApp.equiposinstalados.descripcion" for="field_descripcion">Descripcion</label>
+                    <input type="text" class="form-control" name="descripcion" id="field_descripcion"
+                           formControlName="descripcion"/>
+                    <div *ngIf="editForm.get('descripcion')!.invalid && (editForm.get('descripcion')!.dirty || editForm.get('descripcion')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('descripcion')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('descripcion')?.errors?.minlength" jhiTranslate="entity.validation.minlength" [translateValues]="{ min: 5 }">
+                        This field is required to be at least 5 characters.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('descripcion')?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 500 }">
+                        This field cannot be longer than 500 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hometechclaimApp.equiposinstalados.observacion" for="field_observacion">Observacion</label>
+                    <input type="text" class="form-control" name="observacion" id="field_observacion"
+                           formControlName="observacion"/>
+                    <div *ngIf="editForm.get('observacion')!.invalid && (editForm.get('observacion')!.dirty || editForm.get('observacion')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('observacion')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('observacion')?.errors?.minlength" jhiTranslate="entity.validation.minlength" [translateValues]="{ min: 5 }">
+                        This field is required to be at least 5 characters.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('observacion')?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 500 }">
+                        This field cannot be longer than 500 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hometechclaimApp.equiposinstalados.fechainstalacion" for="field_fechainstalacion">Fechainstalacion</label>
+                    <div class="d-flex">
+                        <input id="field_fechainstalacion" type="datetime-local" class="form-control" name="fechainstalacion" formControlName="fechainstalacion" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hometechclaimApp.equiposinstalados.posibleactuliazcion" for="field_posibleactuliazcion">Posibleactuliazcion</label>
+                    <input type="checkbox" class="form-control" name="posibleactuliazcion" id="field_posibleactuliazcion"
+                           formControlName="posibleactuliazcion"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hometechclaimApp.equiposinstalados.cantidad" for="field_cantidad">Cantidad</label>
+                    <input type="number" class="form-control" name="cantidad" id="field_cantidad"
+                           formControlName="cantidad"/>
+                    <div *ngIf="editForm.get('cantidad')!.invalid && (editForm.get('cantidad')!.dirty || editForm.get('cantidad')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('cantidad')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('cantidad')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hometechclaimApp.equiposinstalados.cliente" for="field_cliente">Cliente</label>
+                    <select class="form-control" id="field_cliente" name="cliente" formControlName="cliente">
+                        <option *ngIf="!editForm.get('cliente')!.value" [ngValue]="null" selected></option>
+                        <option [ngValue]="clienteOption.id === editForm.get('cliente')!.value?.id ? editForm.get('cliente')!.value : clienteOption" *ngFor="let clienteOption of clientes; trackBy: trackById">{{ clienteOption.id }}</option>
+                    </select>
+                </div>
+                <div *ngIf="editForm.get('cliente')!.invalid && (editForm.get('cliente')!.dirty || editForm.get('cliente')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('cliente')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hometechclaimApp.equiposinstalados.equipo" for="field_equipo">Equipo</label>
+                    <select class="form-control" id="field_equipo" name="equipo" formControlName="equipo">
+                        <option *ngIf="!editForm.get('equipo')!.value" [ngValue]="null" selected></option>
+                        <option [ngValue]="equipoOption.id === editForm.get('equipo')!.value?.id ? editForm.get('equipo')!.value : equipoOption" *ngFor="let equipoOption of equipos; trackBy: trackById">{{ equipoOption.id }}</option>
+                    </select>
+                </div>
+                <div *ngIf="editForm.get('equipo')!.invalid && (editForm.get('equipo')!.dirty || editForm.get('equipo')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('equipo')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hometechclaimApp.equiposinstalados.proyecto" for="field_proyecto">Proyecto</label>
+                    <select class="form-control" id="field_proyecto" name="proyecto" formControlName="proyecto">
+                        <option *ngIf="!editForm.get('proyecto')!.value" [ngValue]="null" selected></option>
+                        <option [ngValue]="proyectoOption.id === editForm.get('proyecto')!.value?.id ? editForm.get('proyecto')!.value : proyectoOption" *ngFor="let proyectoOption of proyectos; trackBy: trackById">{{ proyectoOption.id }}</option>
+                    </select>
+                </div>
+                <div *ngIf="editForm.get('proyecto')!.invalid && (editForm.get('proyecto')!.dirty || editForm.get('proyecto')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('proyecto')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

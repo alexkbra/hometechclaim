@@ -1,0 +1,74 @@
+{
+    "name": "Requerimiento",
+    "fields": [
+        {
+            "fieldName": "detalleproblema",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "fechacreacion",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "fechaactualizacion",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "observaciones",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "idusuarioatendio",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "idusuarioactualizo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "idUsuario",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "imagen",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "estadoRequerimiento",
+            "fieldType": "EstadoRequerimiento",
+            "fieldValues": "INICIADO,ENPROCESO,RESUELTO,PROBLEMA,PROBLEMAMAYOR"
+        },
+        {
+            "fieldName": "tipoRequerimiento",
+            "fieldType": "TipoRequerimiento",
+            "fieldValues": "NUEVOEQUIPO,PROBLEMASEQUIPO"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "requerimientoToSolucion",
+            "otherEntityRelationshipName": "requerimiento",
+            "relationshipName": "requerimientoToSolucion"
+        }
+    ],
+    "changelogDate": "20200408035600",
+    "entityTableName": "requerimiento",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

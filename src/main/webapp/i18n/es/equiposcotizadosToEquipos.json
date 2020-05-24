@@ -1,0 +1,28 @@
+{
+  "hometechclaimApp": {
+    "equiposcotizadosToEquipos": {
+      "home": {
+        "title": "Equiposcotizados To Equipos",
+        "createLabel": "Crear nuevo Equiposcotizados To Equipos",
+        "createOrEditLabel": "Crear o editar Equiposcotizados To Equipos",
+        "notFound": "Ningún Equiposcotizados To Equipos encontrado"
+      },
+      "created": "Un nuevo Equiposcotizados To Equipos ha sido creado con el identificador {{ param }}",
+      "updated": "Un Equiposcotizados To Equipos ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Equiposcotizados To Equipos ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Equiposcotizados To Equipos {{ id }}?"
+      },
+      "detail": {
+        "title": "Equiposcotizados To Equipos"
+      },
+      "valorUnidad": "Valor Unidad",
+      "valorUtilUnidad": "Valor Util Unidad",
+      "descuentoUnidad": "Descuento Unidad",
+      "fechacotizacion": "Fechacotizacion",
+      "cantidadEquipos": "Cantidad Equipos",
+      "cotizacion": "Cotizacion",
+      "equiposcotizadosToEquipos": "Equiposcotizados To Equipos"
+    }
+  }
+}

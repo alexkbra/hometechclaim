@@ -1,0 +1,37 @@
+{
+    "name": "InteresesToCliente",
+    "fields": [
+        {
+            "fieldName": "fechacreacion",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "cliente",
+            "otherEntityRelationshipName": "interesesToCliente",
+            "relationshipValidateRules": "required",
+            "relationshipName": "cliente",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "intereses",
+            "otherEntityRelationshipName": "interesesToCliente",
+            "relationshipValidateRules": "required",
+            "relationshipName": "intereses",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200408040700",
+    "entityTableName": "intereses_to_cliente",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

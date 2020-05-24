@@ -1,0 +1,166 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-equipo-heading" jhiTranslate="hometechclaimApp.equipo.home.createOrEditLabel">Create or edit a Equipo</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hometechclaimApp.equipo.nombre" for="field_nombre">Nombre</label>
+                    <input type="text" class="form-control" name="nombre" id="field_nombre"
+                           formControlName="nombre"/>
+                    <div *ngIf="editForm.get('nombre')!.invalid && (editForm.get('nombre')!.dirty || editForm.get('nombre')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('nombre')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('nombre')?.errors?.minlength" jhiTranslate="entity.validation.minlength" [translateValues]="{ min: 5 }">
+                        This field is required to be at least 5 characters.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('nombre')?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 250 }">
+                        This field cannot be longer than 250 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hometechclaimApp.equipo.version" for="field_version">Version</label>
+                    <input type="text" class="form-control" name="version" id="field_version"
+                           formControlName="version"/>
+                    <div *ngIf="editForm.get('version')!.invalid && (editForm.get('version')!.dirty || editForm.get('version')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('version')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('version')?.errors?.minlength" jhiTranslate="entity.validation.minlength" [translateValues]="{ min: 2 }">
+                        This field is required to be at least 2 characters.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('version')?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hometechclaimApp.equipo.controlador" for="field_controlador">Controlador</label>
+                    <input type="text" class="form-control" name="controlador" id="field_controlador"
+                           formControlName="controlador"/>
+                    <div *ngIf="editForm.get('controlador')!.invalid && (editForm.get('controlador')!.dirty || editForm.get('controlador')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('controlador')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('controlador')?.errors?.minlength" jhiTranslate="entity.validation.minlength" [translateValues]="{ min: 5 }">
+                        This field is required to be at least 5 characters.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('controlador')?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 100 }">
+                        This field cannot be longer than 100 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hometechclaimApp.equipo.accountname" for="field_accountname">Accountname</label>
+                    <input type="text" class="form-control" name="accountname" id="field_accountname"
+                           formControlName="accountname"/>
+                    <div *ngIf="editForm.get('accountname')!.invalid && (editForm.get('accountname')!.dirty || editForm.get('accountname')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('accountname')?.errors?.minlength" jhiTranslate="entity.validation.minlength" [translateValues]="{ min: 5 }">
+                        This field is required to be at least 5 characters.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('accountname')?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 100 }">
+                        This field cannot be longer than 100 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hometechclaimApp.equipo.controllermacaddress" for="field_controllermacaddress">Controllermacaddress</label>
+                    <input type="text" class="form-control" name="controllermacaddress" id="field_controllermacaddress"
+                           formControlName="controllermacaddress"/>
+                    <div *ngIf="editForm.get('controllermacaddress')!.invalid && (editForm.get('controllermacaddress')!.dirty || editForm.get('controllermacaddress')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('controllermacaddress')?.errors?.minlength" jhiTranslate="entity.validation.minlength" [translateValues]="{ min: 5 }">
+                        This field is required to be at least 5 characters.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('controllermacaddress')?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 100 }">
+                        This field cannot be longer than 100 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hometechclaimApp.equipo.imagenUrl" for="field_imagenUrl">Imagen Url</label>
+                    <div>
+                        <img [src]="'data:' + editForm.get('imagenUrlContentType')!.value + ';base64,' + editForm.get('imagenUrl')!.value" style="max-height: 100px;" *ngIf="editForm.get('imagenUrl')!.value" alt="equipo image"/>
+                        <div *ngIf="editForm.get('imagenUrl')!.value" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{ editForm.get('imagenUrlContentType')!.value }}, {{ byteSize(editForm.get('imagenUrl')!.value) }}</span>
+                            <button type="button" (click)="clearInputImage('imagenUrl', 'imagenUrlContentType', 'file_imagenUrl')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon icon="times"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_imagenUrl" (change)="setFileData($event, 'imagenUrl', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="imagenUrl" id="field_imagenUrl"
+                           formControlName="imagenUrl"/>
+                    <input type="hidden" class="form-control" name="imagenUrlContentType" id="field_imagenUrlContentType"
+                           formControlName="imagenUrlContentType" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hometechclaimApp.equipo.valor" for="field_valor">Valor</label>
+                    <input type="number" class="form-control" name="valor" id="field_valor"
+                           formControlName="valor"/>
+                    <div *ngIf="editForm.get('valor')!.invalid && (editForm.get('valor')!.dirty || editForm.get('valor')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('valor')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('valor')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hometechclaimApp.equipo.marca" for="field_marca">Marca</label>
+                    <select class="form-control" id="field_marca" name="marca" formControlName="marca">
+                        <option *ngIf="!editForm.get('marca')!.value" [ngValue]="null" selected></option>
+                        <option [ngValue]="marcaOption.id === editForm.get('marca')!.value?.id ? editForm.get('marca')!.value : marcaOption" *ngFor="let marcaOption of marcas; trackBy: trackById">{{ marcaOption.id }}</option>
+                    </select>
+                </div>
+                <div *ngIf="editForm.get('marca')!.invalid && (editForm.get('marca')!.dirty || editForm.get('marca')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('marca')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

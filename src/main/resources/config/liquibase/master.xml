@@ -14,6 +14,47 @@
     <property name="uuidType" value="varchar(36)" dbms="h2, mysql, mariadb"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200408034600_added_entity_Dispositivo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200408034700_added_entity_Dealer.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200408034800_added_entity_Cliente.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200408034900_added_entity_Proyecto.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200408035000_added_entity_Equiposinstalados.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200408035100_added_entity_Departamentos.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200408035200_added_entity_Municipios.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200408035300_added_entity_Ciudad.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200408035400_added_entity_Cotizacion.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200408035500_added_entity_EquiposcotizadosToEquipos.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200408035600_added_entity_Requerimiento.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200408035700_added_entity_RequerimientoToSolucion.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200408035800_added_entity_TipoSolucion.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200408035900_added_entity_Solucion.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200408040000_added_entity_TipoEquipo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200408040100_added_entity_Marca.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200408040200_added_entity_Equipo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200408040300_added_entity_Novedad.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200408040400_added_entity_Contenido.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200408040500_added_entity_NovedadToCliente.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200408040600_added_entity_Intereses.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200408040700_added_entity_InteresesToCliente.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200408040800_added_entity_Comerciales.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200408040900_added_entity_Colaboradores.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200408041000_added_entity_Notificaciones.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20200408034700_added_entity_constraints_Dealer.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200408034800_added_entity_constraints_Cliente.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200408035000_added_entity_constraints_Equiposinstalados.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200408035200_added_entity_constraints_Municipios.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200408035300_added_entity_constraints_Ciudad.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200408035400_added_entity_constraints_Cotizacion.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200408035500_added_entity_constraints_EquiposcotizadosToEquipos.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200408035700_added_entity_constraints_RequerimientoToSolucion.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200408035900_added_entity_constraints_Solucion.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200408040000_added_entity_constraints_TipoEquipo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200408040100_added_entity_constraints_Marca.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200408040200_added_entity_constraints_Equipo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200408040400_added_entity_constraints_Contenido.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200408040500_added_entity_constraints_NovedadToCliente.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200408040700_added_entity_constraints_InteresesToCliente.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200408040900_added_entity_constraints_Colaboradores.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

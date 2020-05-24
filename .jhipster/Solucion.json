@@ -1,0 +1,69 @@
+{
+    "name": "Solucion",
+    "fields": [
+        {
+            "fieldName": "nombre",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength",
+                "required"
+            ],
+            "fieldValidateRulesMinlength": "5",
+            "fieldValidateRulesMaxlength": "250"
+        },
+        {
+            "fieldName": "descripcion",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "code",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength",
+                "required"
+            ],
+            "fieldValidateRulesMinlength": "2",
+            "fieldValidateRulesMaxlength": "10"
+        },
+        {
+            "fieldName": "imagenUrl",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "requerimientoToSolucion",
+            "otherEntityRelationshipName": "solucion",
+            "relationshipName": "requerimientoToSolucion"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "tipoEquipo",
+            "otherEntityRelationshipName": "solucion",
+            "relationshipName": "tipoEquipo"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "tipoSolucion",
+            "otherEntityRelationshipName": "solucion",
+            "relationshipValidateRules": "required",
+            "relationshipName": "tipoSolucion",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200408035900",
+    "entityTableName": "solucion",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

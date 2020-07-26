@@ -32,7 +32,7 @@
                     <label class="form-control-label" jhiTranslate="hometechclaimApp.requerimientoToSolucion.requerimiento" for="field_requerimiento">Requerimiento</label>
                     <select class="form-control" id="field_requerimiento" name="requerimiento" formControlName="requerimiento">
                         <option *ngIf="!editForm.get('requerimiento')!.value" [ngValue]="null" selected></option>
-                        <option [ngValue]="requerimientoOption.id === editForm.get('requerimiento')!.value?.id ? editForm.get('requerimiento')!.value : requerimientoOption" *ngFor="let requerimientoOption of requerimientos; trackBy: trackById">{{ requerimientoOption.id }}</option>
+                        <option [ngValue]="requerimientoOption.id === editForm.get('requerimiento')!.value?.id ? editForm.get('requerimiento')!.value : requerimientoOption" *ngFor="let requerimientoOption of requerimientos; trackBy: trackById">{{ requerimientoOption.detalleproblema }}</option>
                     </select>
                 </div>
                 <div *ngIf="editForm.get('requerimiento')!.invalid && (editForm.get('requerimiento')!.dirty || editForm.get('requerimiento')!.touched)">
@@ -46,7 +46,7 @@
                     <label class="form-control-label" jhiTranslate="hometechclaimApp.requerimientoToSolucion.solucion" for="field_solucion">Solucion</label>
                     <select class="form-control" id="field_solucion" name="solucion" formControlName="solucion">
                         <option *ngIf="!editForm.get('solucion')!.value" [ngValue]="null" selected></option>
-                        <option [ngValue]="solucionOption.id === editForm.get('solucion')!.value?.id ? editForm.get('solucion')!.value : solucionOption" *ngFor="let solucionOption of solucions; trackBy: trackById">{{ solucionOption.id }}</option>
+                        <option [ngValue]="solucionOption.id === editForm.get('solucion')!.value?.id ? editForm.get('solucion')!.value : solucionOption" *ngFor="let solucionOption of solucions; trackBy: trackById">{{ solucionOption.nombre }}</option>
                     </select>
                 </div>
                 <div *ngIf="editForm.get('solucion')!.invalid && (editForm.get('solucion')!.dirty || editForm.get('solucion')!.touched)">

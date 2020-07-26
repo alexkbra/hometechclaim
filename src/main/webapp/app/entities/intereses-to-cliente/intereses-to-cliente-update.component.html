@@ -22,7 +22,7 @@
                     <label class="form-control-label" jhiTranslate="hometechclaimApp.interesesToCliente.cliente" for="field_cliente">Cliente</label>
                     <select class="form-control" id="field_cliente" name="cliente" formControlName="cliente">
                         <option *ngIf="!editForm.get('cliente')!.value" [ngValue]="null" selected></option>
-                        <option [ngValue]="clienteOption.id === editForm.get('cliente')!.value?.id ? editForm.get('cliente')!.value : clienteOption" *ngFor="let clienteOption of clientes; trackBy: trackById">{{ clienteOption.id }}</option>
+                        <option [ngValue]="clienteOption.id === editForm.get('cliente')!.value?.id ? editForm.get('cliente')!.value : clienteOption" *ngFor="let clienteOption of clientes; trackBy: trackById">{{ clienteOption.nombre }}</option>
                     </select>
                 </div>
                 <div *ngIf="editForm.get('cliente')!.invalid && (editForm.get('cliente')!.dirty || editForm.get('cliente')!.touched)">
@@ -36,7 +36,7 @@
                     <label class="form-control-label" jhiTranslate="hometechclaimApp.interesesToCliente.intereses" for="field_intereses">Intereses</label>
                     <select class="form-control" id="field_intereses" name="intereses" formControlName="intereses">
                         <option *ngIf="!editForm.get('intereses')!.value" [ngValue]="null" selected></option>
-                        <option [ngValue]="interesesOption.id === editForm.get('intereses')!.value?.id ? editForm.get('intereses')!.value : interesesOption" *ngFor="let interesesOption of intereses; trackBy: trackById">{{ interesesOption.id }}</option>
+                        <option [ngValue]="interesesOption.id === editForm.get('intereses')!.value?.id ? editForm.get('intereses')!.value : interesesOption" *ngFor="let interesesOption of intereses; trackBy: trackById">{{ interesesOption.nombre }}</option>
                     </select>
                 </div>
                 <div *ngIf="editForm.get('intereses')!.invalid && (editForm.get('intereses')!.dirty || editForm.get('intereses')!.touched)">

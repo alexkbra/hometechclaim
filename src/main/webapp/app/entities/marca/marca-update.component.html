@@ -73,7 +73,7 @@
                     <label class="form-control-label" jhiTranslate="hometechclaimApp.marca.tipoEquipo" for="field_tipoEquipo">Tipo Equipo</label>
                     <select class="form-control" id="field_tipoEquipo" name="tipoEquipo" formControlName="tipoEquipo">
                         <option *ngIf="!editForm.get('tipoEquipo')!.value" [ngValue]="null" selected></option>
-                        <option [ngValue]="tipoEquipoOption.id === editForm.get('tipoEquipo')!.value?.id ? editForm.get('tipoEquipo')!.value : tipoEquipoOption" *ngFor="let tipoEquipoOption of tipoequipos; trackBy: trackById">{{ tipoEquipoOption.id }}</option>
+                        <option [ngValue]="tipoEquipoOption.id === editForm.get('tipoEquipo')!.value?.id ? editForm.get('tipoEquipo')!.value : tipoEquipoOption" *ngFor="let tipoEquipoOption of tipoequipos; trackBy: trackById">{{ tipoEquipoOption.nombre }}</option>
                     </select>
                 </div>
                 <div *ngIf="editForm.get('tipoEquipo')!.invalid && (editForm.get('tipoEquipo')!.dirty || editForm.get('tipoEquipo')!.touched)">

@@ -121,17 +121,17 @@
                     </div>
                 </div>
 
-                <div class="form-group">
+                <!--div class="form-group">
                     <label class="form-control-label" jhiTranslate="hometechclaimApp.dealer.idusuario" for="field_idusuario">Idusuario</label>
                     <input type="text" class="form-control" name="idusuario" id="field_idusuario"
                            formControlName="idusuario"/>
-                </div>
+                </div-->
 
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="hometechclaimApp.dealer.comerciales" for="field_comerciales">Comerciales</label>
                     <select class="form-control" id="field_comerciales" name="comerciales" formControlName="comerciales">
                         <option *ngIf="!editForm.get('comerciales')!.value" [ngValue]="null" selected></option>
-                        <option [ngValue]="comercialesOption.id === editForm.get('comerciales')!.value?.id ? editForm.get('comerciales')!.value : comercialesOption" *ngFor="let comercialesOption of comerciales; trackBy: trackById">{{ comercialesOption.id }}</option>
+                        <option [ngValue]="comercialesOption.id === editForm.get('comerciales')!.value?.id ? editForm.get('comerciales')!.value : comercialesOption" *ngFor="let comercialesOption of comerciales; trackBy: trackById">{{ comercialesOption.nombre }}</option>
                     </select>
                 </div>
                 <div *ngIf="editForm.get('comerciales')!.invalid && (editForm.get('comerciales')!.dirty || editForm.get('comerciales')!.touched)">

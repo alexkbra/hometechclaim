@@ -96,7 +96,7 @@
                     <label class="form-control-label" jhiTranslate="hometechclaimApp.equiposcotizadosToEquipos.cotizacion" for="field_cotizacion">Cotizacion</label>
                     <select class="form-control" id="field_cotizacion" name="cotizacion" formControlName="cotizacion">
                         <option *ngIf="!editForm.get('cotizacion')!.value" [ngValue]="null" selected></option>
-                        <option [ngValue]="cotizacionOption.id === editForm.get('cotizacion')!.value?.id ? editForm.get('cotizacion')!.value : cotizacionOption" *ngFor="let cotizacionOption of cotizacions; trackBy: trackById">{{ cotizacionOption.id }}</option>
+                        <option [ngValue]="cotizacionOption.id === editForm.get('cotizacion')!.value?.id ? editForm.get('cotizacion')!.value : cotizacionOption" *ngFor="let cotizacionOption of cotizacions; trackBy: trackById">{{ cotizacionOption.descripcion }}</option>
                     </select>
                 </div>
                 <div *ngIf="editForm.get('cotizacion')!.invalid && (editForm.get('cotizacion')!.dirty || editForm.get('cotizacion')!.touched)">
@@ -110,7 +110,7 @@
                     <label class="form-control-label" jhiTranslate="hometechclaimApp.equiposcotizadosToEquipos.equiposcotizadosToEquipos" for="field_equiposcotizadosToEquipos">Equiposcotizados To Equipos</label>
                     <select class="form-control" id="field_equiposcotizadosToEquipos" name="equiposcotizadosToEquipos" formControlName="equiposcotizadosToEquipos">
                         <option *ngIf="!editForm.get('equiposcotizadosToEquipos')!.value" [ngValue]="null" selected></option>
-                        <option [ngValue]="equipoOption.id === editForm.get('equiposcotizadosToEquipos')!.value?.id ? editForm.get('equiposcotizadosToEquipos')!.value : equipoOption" *ngFor="let equipoOption of equipos; trackBy: trackById">{{ equipoOption.id }}</option>
+                        <option [ngValue]="equipoOption.id === editForm.get('equiposcotizadosToEquipos')!.value?.id ? editForm.get('equiposcotizadosToEquipos')!.value : equipoOption" *ngFor="let equipoOption of equipos; trackBy: trackById">{{ equipoOption.nombre }}</option>
                     </select>
                 </div>
                 <div *ngIf="editForm.get('equiposcotizadosToEquipos')!.invalid && (editForm.get('equiposcotizadosToEquipos')!.dirty || editForm.get('equiposcotizadosToEquipos')!.touched)">

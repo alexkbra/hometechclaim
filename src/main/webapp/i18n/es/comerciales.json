@@ -3,22 +3,22 @@
     "comerciales": {
       "home": {
         "title": "Comerciales",
-        "createLabel": "Crear nuevo Comerciales",
-        "createOrEditLabel": "Crear o editar Comerciales",
-        "notFound": "Ningún Comerciales encontrado"
+        "createLabel": "Crear nuevo Comercial",
+        "createOrEditLabel": "Crear o editar Comercial",
+        "notFound": "Comercial no encontrado"
       },
-      "created": "Un nuevo Comerciales ha sido creado con el identificador {{ param }}",
-      "updated": "Un Comerciales ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Comerciales ha sido eliminado con el identificador {{ param }}",
+      "created": "Un nuevo Comercial ha sido creado con el identificador {{ param }}",
+      "updated": "Un Comercial ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Comercial ha sido eliminado con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Comerciales {{ id }}?"
+        "question": "¿Seguro que quiere eliminar el Comercial {{ id }}?"
       },
       "detail": {
         "title": "Comerciales"
       },
       "codigo": "Codigo",
       "nombre": "Nombre",
-      "descripcion": "Descripcion",
+      "descripcion": "Descripción",
       "correo": "Correo",
       "zona": "Zona",
       "idciudad": "Idciudad",

@@ -2,21 +2,21 @@
   "hometechclaimApp": {
     "interesesToCliente": {
       "home": {
-        "title": "Intereses To Clientes",
-        "createLabel": "Crear nuevo Intereses To Cliente",
-        "createOrEditLabel": "Crear o editar Intereses To Cliente",
-        "notFound": "Ningún Intereses To Clientes encontrado"
+        "title": "Intereses del cliente",
+        "createLabel": "Crear nuevo Interés del cliente",
+        "createOrEditLabel": "Crear o editar el interés del cliente",
+        "notFound": "Interés del cliente no encontrado"
       },
-      "created": "Un nuevo Intereses To Cliente ha sido creado con el identificador {{ param }}",
-      "updated": "Un Intereses To Cliente ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Intereses To Cliente ha sido eliminado con el identificador {{ param }}",
+      "created": "Un nuevo interés del cliente ha sido creado con el identificador {{ param }}",
+      "updated": "Un interés del cliente ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un interés del cliente ha sido eliminado con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Intereses To Cliente {{ id }}?"
+        "question": "¿Seguro que quiere eliminar el interés del cliente {{ id }}?"
       },
       "detail": {
-        "title": "Intereses To Cliente"
+        "title": "Intereses del Cliente"
       },
-      "fechacreacion": "Fechacreacion",
+      "fechacreacion": "Fecha creación",
       "cliente": "Cliente",
       "intereses": "Intereses"
     }

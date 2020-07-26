@@ -5,13 +5,13 @@
         "title": "Colaboradores",
         "createLabel": "Crear nuevo Colaboradores",
         "createOrEditLabel": "Crear o editar Colaboradores",
-        "notFound": "Ningún Colaboradores encontrado"
+        "notFound": "Colaborador no encontrado"
       },
-      "created": "Un nuevo Colaboradores ha sido creado con el identificador {{ param }}",
-      "updated": "Un Colaboradores ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Colaboradores ha sido eliminado con el identificador {{ param }}",
+      "created": "Un nuevo Colaborador ha sido creado con el identificador {{ param }}",
+      "updated": "Un Colaborador ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Colaborador ha sido eliminado con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Colaboradores {{ id }}?"
+        "question": "¿Seguro que quiere eliminar el Colaborador {{ id }}?"
       },
       "detail": {
         "title": "Colaboradores"

@@ -2,30 +2,30 @@
   "hometechclaimApp": {
     "cotizacion": {
       "home": {
-        "title": "Cotizacions",
-        "createLabel": "Crear nuevo Cotizacion",
-        "createOrEditLabel": "Crear o editar Cotizacion",
-        "notFound": "Ningún Cotizacions encontrado"
+        "title": "Cotización",
+        "createLabel": "Crear nueva Cotización",
+        "createOrEditLabel": "Crear o editar Cotización",
+        "notFound": "Cotizacion no encontrada"
       },
-      "created": "Un nuevo Cotizacion ha sido creado con el identificador {{ param }}",
-      "updated": "Un Cotizacion ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Cotizacion ha sido eliminado con el identificador {{ param }}",
+      "created": "Una nueva Cotización ha sido creada con el identificador {{ param }}",
+      "updated": "Una Cotización ha sido actualizada con el identificador {{ param }}",
+      "deleted": "Una Cotización ha sido eliminada con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Cotizacion {{ id }}?"
+        "question": "¿Seguro que quiere eliminar la Cotizacion {{ id }}?"
       },
       "detail": {
-        "title": "Cotizacion"
+        "title": "Cotización"
       },
-      "fechacreacion": "Fechacreacion",
-      "descripcion": "Descripcion",
-      "valoriva": "Valoriva",
-      "totalsiniva": "Totalsiniva",
-      "porcentajedescuento": "Porcentajedescuento",
-      "fechamantenimiento": "Fechamantenimiento",
+      "fechacreacion": "Fecha creacion",
+      "descripcion": "Descripción",
+      "valoriva": "Valor IVA",
+      "totalsiniva": "Total sin IVA",
+      "porcentajedescuento": "Porcentaje descuento",
+      "fechamantenimiento": "Fecha mantenimiento",
       "activo": "Activo",
       "total": "Total",
-      "estadocotizacion": "Estadocotizacion",
-      "equiposcotizadosToEquipos": "Equiposcotizados To Equipos",
+      "estadocotizacion": "Estado cotización",
+      "equiposcotizadosToEquipos": "Equipos cotizados",
       "cliente": "Cliente"
     }
   }

@@ -3,15 +3,15 @@
     "municipios": {
       "home": {
         "title": "Municipios",
-        "createLabel": "Crear nuevo Municipios",
-        "createOrEditLabel": "Crear o editar Municipios",
-        "notFound": "Ningún Municipios encontrado"
+        "createLabel": "Crear nuevo Municipio",
+        "createOrEditLabel": "Crear o editar Municipio",
+        "notFound": "Municipio no encontrado"
       },
-      "created": "Un nuevo Municipios ha sido creado con el identificador {{ param }}",
-      "updated": "Un Municipios ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Municipios ha sido eliminado con el identificador {{ param }}",
+      "created": "Un nuevo Municipio ha sido creado con el identificador {{ param }}",
+      "updated": "Un Municipio ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Municipio ha sido eliminado con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Municipios {{ id }}?"
+        "question": "¿Seguro que quiere eliminar el Municipio {{ id }}?"
       },
       "detail": {
         "title": "Municipios"
@@ -20,7 +20,7 @@
       "municipio": "Municipio",
       "estado": "Estado",
       "ciudad": "Ciudad",
-      "departamentos": "Departamentos"
+      "departamentos": "Departamento"
     }
   }
 }

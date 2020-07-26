@@ -2,9 +2,9 @@
   "hometechclaimApp": {
     "TipoContenido": {
       "null": "",
-      "VIDEO": "VIDEO",
-      "IMAGEN": "IMAGEN",
-      "AUDIO": "AUDIO"
+      "VIDEO": "Video",
+      "IMAGEN": "Imagen",
+      "AUDIO": "Audio"
     }
   }
 }

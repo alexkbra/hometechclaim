@@ -2,24 +2,24 @@
   "hometechclaimApp": {
     "tipoSolucion": {
       "home": {
-        "title": "Tipo Solucions",
-        "createLabel": "Crear nuevo Tipo Solucion",
-        "createOrEditLabel": "Crear o editar Tipo Solucion",
-        "notFound": "Ningún Tipo Solucions encontrado"
+        "title": "Tipo de Soluciones",
+        "createLabel": "Crear nuevo tipo de solución",
+        "createOrEditLabel": "Crear o editar tipo de solución",
+        "notFound": "tipo de solución no encontrada"
       },
-      "created": "Un nuevo Tipo Solucion ha sido creado con el identificador {{ param }}",
-      "updated": "Un Tipo Solucion ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Tipo Solucion ha sido eliminado con el identificador {{ param }}",
+      "created": "Un nuevo tipo de solución ha sido creada con el identificador {{ param }}",
+      "updated": "Un tipo de solución ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un tipo  de solución ha sido eliminado con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Tipo Solucion {{ id }}?"
+        "question": "¿Seguro que quiere eliminar el tipo de solución {{ id }}?"
       },
       "detail": {
-        "title": "Tipo Solucion"
+        "title": "Tipo de solución"
       },
       "nombre": "Nombre",
       "code": "Code",
       "imagenUrl": "Imagen Url",
-      "solucion": "Solucion"
+      "solucion": "Solución"
     }
   }
 }

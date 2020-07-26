@@ -2,8 +2,8 @@
   "hometechclaimApp": {
     "TipoRequerimiento": {
       "null": "",
-      "NUEVOEQUIPO": "NUEVOEQUIPO",
-      "PROBLEMASEQUIPO": "PROBLEMASEQUIPO"
+      "NUEVOEQUIPO": "Nuevo equipo",
+      "PROBLEMASEQUIPO": "Problemas equipo"
     }
   }
 }

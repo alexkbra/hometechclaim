@@ -3,15 +3,15 @@
     "equipo": {
       "home": {
         "title": "Equipos",
-        "createLabel": "Crear nuevo Equipo",
-        "createOrEditLabel": "Crear o editar Equipo",
-        "notFound": "Ningún Equipos encontrado"
+        "createLabel": "Crear nuevo equipo",
+        "createOrEditLabel": "Crear o editar equipo",
+        "notFound": "Equipo no encontrado"
       },
-      "created": "Un nuevo Equipo ha sido creado con el identificador {{ param }}",
-      "updated": "Un Equipo ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Equipo ha sido eliminado con el identificador {{ param }}",
+      "created": "Un nuevo equipo ha sido creado con el identificador {{ param }}",
+      "updated": "Un equipo ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un equipo ha sido eliminado con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Equipo {{ id }}?"
+        "question": "¿Seguro que quiere eliminar el equipo {{ id }}?"
       },
       "detail": {
         "title": "Equipo"
@@ -23,8 +23,8 @@
       "controllermacaddress": "Controllermacaddress",
       "imagenUrl": "Imagen Url",
       "valor": "Valor",
-      "equiposinstalados": "Equiposinstalados",
-      "equiposcotizadosToEquipos": "Equiposcotizados To Equipos",
+      "equiposinstalados": "Equipos instalados",
+      "equiposcotizadosToEquipos": "Equipos cotizados",
       "marca": "Marca"
     }
   }

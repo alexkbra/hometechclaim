@@ -62,10 +62,10 @@ spring:
   liquibase:
     contexts: prod
   mail:
-    host: smtp.mailtrap.io
-    port: 2525
-    username: e2db951f13c9d5
-    password: 47756a14814d82
+    host: smtp.gmail.com
+    port: 465
+    username: sistemas@hometechcolombia.com
+    password: SystemITHome
   thymeleaf:
     cache: true
 

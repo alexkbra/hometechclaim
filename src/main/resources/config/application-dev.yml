@@ -60,10 +60,10 @@ spring:
     # Remove 'faker' if you do not want the sample data to be loaded automatically
     contexts: dev, faker
   mail:
-    host: smtp.mailtrap.io
-    port: 2525
-    username: e2db951f13c9d5
-    password: 47756a14814d82
+    host: smtp.gmail.com
+    port: 465
+    username: sistemas@hometechcolombia.com
+    password: SystemITHome
   messages:
     cache-duration: PT1S # 1 second, see the ISO 8601 standard
   thymeleaf:

@@ -35,12 +35,12 @@
                     <td>{{ requerimientoToSolucion.fechacreacion | date:'medium' }}</td>
                     <td>
                         <div *ngIf="requerimientoToSolucion.requerimiento">
-                            <a [routerLink]="['/requerimiento', requerimientoToSolucion.requerimiento?.id, 'view']" >{{ requerimientoToSolucion.requerimiento?.id }}</a>
+                            <a [routerLink]="['/requerimiento', requerimientoToSolucion.requerimiento?.id, 'view']" >{{ requerimientoToSolucion.requerimiento?.detalleproblema }}</a>
                         </div>
                     </td>
                     <td>
                         <div *ngIf="requerimientoToSolucion.solucion">
-                            <a [routerLink]="['/solucion', requerimientoToSolucion.solucion?.id, 'view']" >{{ requerimientoToSolucion.solucion?.id }}</a>
+                            <a [routerLink]="['/solucion', requerimientoToSolucion.solucion?.id, 'view']" >{{ requerimientoToSolucion.solucion?.nombre }}</a>
                         </div>
                     </td>
                     <td class="text-right">

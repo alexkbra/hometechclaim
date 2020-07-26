@@ -26,15 +26,15 @@
                     <th scope="col"  jhiSortBy="nombre"><span jhiTranslate="hometechclaimApp.cliente.nombre">Nombre</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="apellido"><span jhiTranslate="hometechclaimApp.cliente.apellido">Apellido</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="correo"><span jhiTranslate="hometechclaimApp.cliente.correo">Correo</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="codigoDealer"><span jhiTranslate="hometechclaimApp.cliente.codigoDealer">Codigo Dealer</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="idciudad"><span jhiTranslate="hometechclaimApp.cliente.idciudad">Idciudad</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="telefonocelular"><span jhiTranslate="hometechclaimApp.cliente.telefonocelular">Telefonocelular</span> <fa-icon icon="sort"></fa-icon></th>
+                    <!--th scope="col"  jhiSortBy="codigoDealer"><span jhiTranslate="hometechclaimApp.cliente.codigoDealer">Codigo Dealer</span> <fa-icon icon="sort"></fa-icon></th-->
+                    <!--th scope="col"  jhiSortBy="idciudad"><span jhiTranslate="hometechclaimApp.cliente.idciudad">Idciudad</span> <fa-icon icon="sort"></fa-icon></th-->
+                    <!--th scope="col"  jhiSortBy="telefonocelular"><span jhiTranslate="hometechclaimApp.cliente.telefonocelular">Telefonocelular</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="telefonofijo"><span jhiTranslate="hometechclaimApp.cliente.telefonofijo">Telefonofijo</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="telefonoempresarial"><span jhiTranslate="hometechclaimApp.cliente.telefonoempresarial">Telefonoempresarial</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="direccionresidencial"><span jhiTranslate="hometechclaimApp.cliente.direccionresidencial">Direccionresidencial</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="direccionempresarial"><span jhiTranslate="hometechclaimApp.cliente.direccionempresarial">Direccionempresarial</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="fechanacimiento"><span jhiTranslate="hometechclaimApp.cliente.fechanacimiento">Fechanacimiento</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="idusuario"><span jhiTranslate="hometechclaimApp.cliente.idusuario">Idusuario</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="idusuario"><span jhiTranslate="hometechclaimApp.cliente.idusuario">Idusuario</span> <fa-icon icon="sort"></fa-icon></th-->
                     <th scope="col"  jhiSortBy="imagen"><span jhiTranslate="hometechclaimApp.cliente.imagen">Imagen</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="dealer.id"><span jhiTranslate="hometechclaimApp.cliente.dealer">Dealer</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"></th>
@@ -46,7 +46,7 @@
                     <td>{{ cliente.nombre }}</td>
                     <td>{{ cliente.apellido }}</td>
                     <td>{{ cliente.correo }}</td>
-                    <td>{{ cliente.codigoDealer }}</td>
+                    <!--td>{{ cliente.codigoDealer }}</td>
                     <td>{{ cliente.idciudad }}</td>
                     <td>{{ cliente.telefonocelular }}</td>
                     <td>{{ cliente.telefonofijo }}</td>
@@ -54,16 +54,16 @@
                     <td>{{ cliente.direccionresidencial }}</td>
                     <td>{{ cliente.direccionempresarial }}</td>
                     <td>{{ cliente.fechanacimiento | date:'mediumDate' }}</td>
-                    <td>{{ cliente.idusuario }}</td>
+                    <td>{{ cliente.idusuario }}</td-->
                     <td>
                         <a *ngIf="cliente.imagen" (click)="openFile(cliente.imagenContentType, cliente.imagen)">
                             <img [src]="'data:' + cliente.imagenContentType + ';base64,' + cliente.imagen" style="max-height: 30px;" alt="cliente image"/>
                         </a>
-                        <span *ngIf="cliente.imagen">{{ cliente.imagenContentType }}, {{ byteSize(cliente.imagen) }}</span>
+                        <!--span *ngIf="cliente.imagen">{{ cliente.imagenContentType }}, {{ byteSize(cliente.imagen) }}</span-->
                     </td>
                     <td>
                         <div *ngIf="cliente.dealer">
-                            <a [routerLink]="['/dealer', cliente.dealer?.id, 'view']" >{{ cliente.dealer?.id }}</a>
+                            <a [routerLink]="['/dealer', cliente.dealer?.id, 'view']" >{{ cliente.dealer?.nombre }}</a>
                         </div>
                     </td>
                     <td class="text-right">

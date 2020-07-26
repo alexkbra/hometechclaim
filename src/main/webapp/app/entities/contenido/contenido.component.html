@@ -24,9 +24,9 @@
                 <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
                     <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="descripcion"><span jhiTranslate="hometechclaimApp.contenido.descripcion">Descripcion</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="videoUrl"><span jhiTranslate="hometechclaimApp.contenido.videoUrl">Video Url</span> <fa-icon icon="sort"></fa-icon></th>
+                    <!--th scope="col"  jhiSortBy="videoUrl"><span jhiTranslate="hometechclaimApp.contenido.videoUrl">Video Url</span> <fa-icon icon="sort"></fa-icon></th-->
                     <th scope="col"  jhiSortBy="imagenURl"><span jhiTranslate="hometechclaimApp.contenido.imagenURl">Imagen U Rl</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="audio"><span jhiTranslate="hometechclaimApp.contenido.audio">Audio</span> <fa-icon icon="sort"></fa-icon></th>
+                    <!--th scope="col"  jhiSortBy="audio"><span jhiTranslate="hometechclaimApp.contenido.audio">Audio</span> <fa-icon icon="sort"></fa-icon></th-->
                     <th scope="col"  jhiSortBy="tipoContenido"><span jhiTranslate="hometechclaimApp.contenido.tipoContenido">Tipo Contenido</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="activo"><span jhiTranslate="hometechclaimApp.contenido.activo">Activo</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="fechacreacion"><span jhiTranslate="hometechclaimApp.contenido.fechacreacion">Fechacreacion</span> <fa-icon icon="sort"></fa-icon></th>
@@ -38,20 +38,20 @@
                 <tr *ngFor="let contenido of contenidos ;trackBy: trackId">
                     <td><a [routerLink]="['/contenido', contenido.id, 'view']">{{ contenido.id }}</a></td>
                     <td>{{ contenido.descripcion }}</td>
-                    <td>{{ contenido.videoUrl }}</td>
+                    <!--td>{{ contenido.videoUrl }}</td-->
                     <td>
                         <a *ngIf="contenido.imagenURl" (click)="openFile(contenido.imagenURlContentType, contenido.imagenURl)">
                             <img [src]="'data:' + contenido.imagenURlContentType + ';base64,' + contenido.imagenURl" style="max-height: 30px;" alt="contenido image"/>
                         </a>
-                        <span *ngIf="contenido.imagenURl">{{ contenido.imagenURlContentType }}, {{ byteSize(contenido.imagenURl) }}</span>
+                        <!--span *ngIf="contenido.imagenURl">{{ contenido.imagenURlContentType }}, {{ byteSize(contenido.imagenURl) }}</span-->
                     </td>
-                    <td>{{ contenido.audio }}</td>
+                    <!--td>{{ contenido.audio }}</td-->
                     <td jhiTranslate="{{ 'hometechclaimApp.TipoContenido.' + contenido.tipoContenido }}">{{ contenido.tipoContenido }}</td>
                     <td>{{ contenido.activo }}</td>
                     <td>{{ contenido.fechacreacion | date:'medium' }}</td>
                     <td>
                         <div *ngIf="contenido.novedad">
-                            <a [routerLink]="['/novedad', contenido.novedad?.id, 'view']" >{{ contenido.novedad?.id }}</a>
+                            <a [routerLink]="['/novedad', contenido.novedad?.id, 'view']" >{{ contenido.novedad?.titulo }}</a>
                         </div>
                     </td>
                     <td class="text-right">

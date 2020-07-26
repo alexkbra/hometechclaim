@@ -80,7 +80,7 @@ export class InteresesComponent implements OnInit, OnDestroy {
   }
 
   sort(): string[] {
-    const result = [this.predicate + ',' + (this.ascending ? 'asc' : 'desc')];
+    const result = [this.predicate + ',' + (this.ascending ? 'desc' : 'asc')];
     if (this.predicate !== 'id') {
       result.push('id');
     }

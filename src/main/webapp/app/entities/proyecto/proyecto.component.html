@@ -26,9 +26,9 @@
                     <th scope="col"  jhiSortBy="fechacreacion"><span jhiTranslate="hometechclaimApp.proyecto.fechacreacion">Fechacreacion</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="descripcion"><span jhiTranslate="hometechclaimApp.proyecto.descripcion">Descripcion</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="valoriva"><span jhiTranslate="hometechclaimApp.proyecto.valoriva">Valoriva</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="totalsiniva"><span jhiTranslate="hometechclaimApp.proyecto.totalsiniva">Totalsiniva</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="fechaultimomantenimiento"><span jhiTranslate="hometechclaimApp.proyecto.fechaultimomantenimiento">Fechaultimomantenimiento</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="porcentajedescuento"><span jhiTranslate="hometechclaimApp.proyecto.porcentajedescuento">Porcentajedescuento</span> <fa-icon icon="sort"></fa-icon></th>
+                    <!--th scope="col"  jhiSortBy="totalsiniva"><span jhiTranslate="hometechclaimApp.proyecto.totalsiniva">Totalsiniva</span> <fa-icon icon="sort"></fa-icon></th-->
+                    <!--th scope="col"  jhiSortBy="fechaultimomantenimiento"><span jhiTranslate="hometechclaimApp.proyecto.fechaultimomantenimiento">Fechaultimomantenimiento</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="porcentajedescuento"><span jhiTranslate="hometechclaimApp.proyecto.porcentajedescuento">Porcentajedescuento</span> <fa-icon icon="sort"></fa-icon></th-->
                     <th scope="col"  jhiSortBy="total"><span jhiTranslate="hometechclaimApp.proyecto.total">Total</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="activo"><span jhiTranslate="hometechclaimApp.proyecto.activo">Activo</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="imagen"><span jhiTranslate="hometechclaimApp.proyecto.imagen">Imagen</span> <fa-icon icon="sort"></fa-icon></th>
@@ -41,16 +41,16 @@
                     <td>{{ proyecto.fechacreacion | date:'medium' }}</td>
                     <td>{{ proyecto.descripcion }}</td>
                     <td>{{ proyecto.valoriva }}</td>
-                    <td>{{ proyecto.totalsiniva }}</td>
+                    <!--td>{{ proyecto.totalsiniva }}</td>
                     <td>{{ proyecto.fechaultimomantenimiento | date:'medium' }}</td>
-                    <td>{{ proyecto.porcentajedescuento }}</td>
+                    <td>{{ proyecto.porcentajedescuento }}</td-->
                     <td>{{ proyecto.total }}</td>
                     <td>{{ proyecto.activo }}</td>
                     <td>
                         <a *ngIf="proyecto.imagen" (click)="openFile(proyecto.imagenContentType, proyecto.imagen)">
                             <img [src]="'data:' + proyecto.imagenContentType + ';base64,' + proyecto.imagen" style="max-height: 30px;" alt="proyecto image"/>
                         </a>
-                        <span *ngIf="proyecto.imagen">{{ proyecto.imagenContentType }}, {{ byteSize(proyecto.imagen) }}</span>
+                        <!--span *ngIf="proyecto.imagen">{{ proyecto.imagenContentType }}, {{ byteSize(proyecto.imagen) }}</span-->
                     </td>
                     <td class="text-right">
                         <div class="btn-group">

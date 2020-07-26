@@ -43,12 +43,12 @@
                     <td>{{ equiposcotizadosToEquipos.cantidadEquipos }}</td>
                     <td>
                         <div *ngIf="equiposcotizadosToEquipos.cotizacion">
-                            <a [routerLink]="['/cotizacion', equiposcotizadosToEquipos.cotizacion?.id, 'view']" >{{ equiposcotizadosToEquipos.cotizacion?.id }}</a>
+                            <a [routerLink]="['/cotizacion', equiposcotizadosToEquipos.cotizacion?.id, 'view']" >{{ equiposcotizadosToEquipos.cotizacion?.descripcion }}</a>
                         </div>
                     </td>
                     <td>
                         <div *ngIf="equiposcotizadosToEquipos.equiposcotizadosToEquipos">
-                            <a [routerLink]="['/equipo', equiposcotizadosToEquipos.equiposcotizadosToEquipos?.id, 'view']" >{{ equiposcotizadosToEquipos.equiposcotizadosToEquipos?.id }}</a>
+                            <a [routerLink]="['/equipo', equiposcotizadosToEquipos.equiposcotizadosToEquipos?.id, 'view']" >{{ equiposcotizadosToEquipos.equiposcotizadosToEquipos?.nombre }}</a>
                         </div>
                     </td>
                     <td class="text-right">

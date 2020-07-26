@@ -38,7 +38,7 @@
                     <td>{{ municipios.estado }}</td>
                     <td>
                         <div *ngIf="municipios.departamentos">
-                            <a [routerLink]="['/departamentos', municipios.departamentos?.id, 'view']" >{{ municipios.departamentos?.id }}</a>
+                            <a [routerLink]="['/departamentos', municipios.departamentos?.id, 'view']" >{{ municipios.departamentos?.departamento }}</a>
                         </div>
                     </td>
                     <td class="text-right">

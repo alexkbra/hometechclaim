@@ -40,7 +40,7 @@
                         <a *ngIf="novedad.imagen" (click)="openFile(novedad.imagenContentType, novedad.imagen)">
                             <img [src]="'data:' + novedad.imagenContentType + ';base64,' + novedad.imagen" style="max-height: 30px;" alt="novedad image"/>
                         </a>
-                        <span *ngIf="novedad.imagen">{{ novedad.imagenContentType }}, {{ byteSize(novedad.imagen) }}</span>
+                        <!--span *ngIf="novedad.imagen">{{ novedad.imagenContentType }}, {{ byteSize(novedad.imagen) }}</span-->
                     </td>
                     <td class="text-right">
                         <div class="btn-group">

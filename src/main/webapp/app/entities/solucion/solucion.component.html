@@ -41,11 +41,11 @@
                         <a *ngIf="solucion.imagenUrl" (click)="openFile(solucion.imagenUrlContentType, solucion.imagenUrl)">
                             <img [src]="'data:' + solucion.imagenUrlContentType + ';base64,' + solucion.imagenUrl" style="max-height: 30px;" alt="solucion image"/>
                         </a>
-                        <span *ngIf="solucion.imagenUrl">{{ solucion.imagenUrlContentType }}, {{ byteSize(solucion.imagenUrl) }}</span>
+                        <!--span *ngIf="solucion.imagenUrl">{{ solucion.imagenUrlContentType }}, {{ byteSize(solucion.imagenUrl) }}</span-->
                     </td>
                     <td>
                         <div *ngIf="solucion.tipoSolucion">
-                            <a [routerLink]="['/tipo-solucion', solucion.tipoSolucion?.id, 'view']" >{{ solucion.tipoSolucion?.id }}</a>
+                            <a [routerLink]="['/tipo-solucion', solucion.tipoSolucion?.id, 'view']" >{{ solucion.tipoSolucion?.nombre }}</a>
                         </div>
                     </td>
                     <td class="text-right">

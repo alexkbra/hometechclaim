@@ -35,12 +35,12 @@
                     <td>{{ novedadToCliente.fechacreacion | date:'medium' }}</td>
                     <td>
                         <div *ngIf="novedadToCliente.novedad">
-                            <a [routerLink]="['/novedad', novedadToCliente.novedad?.id, 'view']" >{{ novedadToCliente.novedad?.id }}</a>
+                            <a [routerLink]="['/novedad', novedadToCliente.novedad?.id, 'view']" >{{ novedadToCliente.novedad?.titulo }}</a>
                         </div>
                     </td>
                     <td>
                         <div *ngIf="novedadToCliente.cliente">
-                            <a [routerLink]="['/cliente', novedadToCliente.cliente?.id, 'view']" >{{ novedadToCliente.cliente?.id }}</a>
+                            <a [routerLink]="['/cliente', novedadToCliente.cliente?.id, 'view']" >{{ novedadToCliente.cliente?.nombre }}</a>
                         </div>
                     </td>
                     <td class="text-right">

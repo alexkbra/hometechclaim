@@ -38,7 +38,7 @@
                         <a *ngIf="tipoSolucion.imagenUrl" (click)="openFile(tipoSolucion.imagenUrlContentType, tipoSolucion.imagenUrl)">
                             <img [src]="'data:' + tipoSolucion.imagenUrlContentType + ';base64,' + tipoSolucion.imagenUrl" style="max-height: 30px;" alt="tipoSolucion image"/>
                         </a>
-                        <span *ngIf="tipoSolucion.imagenUrl">{{ tipoSolucion.imagenUrlContentType }}, {{ byteSize(tipoSolucion.imagenUrl) }}</span>
+                        <!--span *ngIf="tipoSolucion.imagenUrl">{{ tipoSolucion.imagenUrlContentType }}, {{ byteSize(tipoSolucion.imagenUrl) }}</span-->
                     </td>
                     <td class="text-right">
                         <div class="btn-group">

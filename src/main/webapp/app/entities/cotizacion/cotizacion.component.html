@@ -25,10 +25,10 @@
                     <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="fechacreacion"><span jhiTranslate="hometechclaimApp.cotizacion.fechacreacion">Fechacreacion</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="descripcion"><span jhiTranslate="hometechclaimApp.cotizacion.descripcion">Descripcion</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="valoriva"><span jhiTranslate="hometechclaimApp.cotizacion.valoriva">Valoriva</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="totalsiniva"><span jhiTranslate="hometechclaimApp.cotizacion.totalsiniva">Totalsiniva</span> <fa-icon icon="sort"></fa-icon></th>
+                    <!--th scope="col"  jhiSortBy="valoriva"><span jhiTranslate="hometechclaimApp.cotizacion.valoriva">Valoriva</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="totalsiniva"><span jhiTranslate="hometechclaimApp.cotizacion.totalsiniva">Totalsiniva</span> <fa-icon icon="sort"></fa-icon></th-->
                     <th scope="col"  jhiSortBy="porcentajedescuento"><span jhiTranslate="hometechclaimApp.cotizacion.porcentajedescuento">Porcentajedescuento</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="fechamantenimiento"><span jhiTranslate="hometechclaimApp.cotizacion.fechamantenimiento">Fechamantenimiento</span> <fa-icon icon="sort"></fa-icon></th>
+                    <!--th scope="col"  jhiSortBy="fechamantenimiento"><span jhiTranslate="hometechclaimApp.cotizacion.fechamantenimiento">Fechamantenimiento</span> <fa-icon icon="sort"></fa-icon></th-->
                     <th scope="col"  jhiSortBy="activo"><span jhiTranslate="hometechclaimApp.cotizacion.activo">Activo</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="total"><span jhiTranslate="hometechclaimApp.cotizacion.total">Total</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="estadocotizacion"><span jhiTranslate="hometechclaimApp.cotizacion.estadocotizacion">Estadocotizacion</span> <fa-icon icon="sort"></fa-icon></th>
@@ -41,16 +41,16 @@
                     <td><a [routerLink]="['/cotizacion', cotizacion.id, 'view']">{{ cotizacion.id }}</a></td>
                     <td>{{ cotizacion.fechacreacion | date:'medium' }}</td>
                     <td>{{ cotizacion.descripcion }}</td>
-                    <td>{{ cotizacion.valoriva }}</td>
-                    <td>{{ cotizacion.totalsiniva }}</td>
+                    <!--td>{{ cotizacion.valoriva }}</td>
+                    <td>{{ cotizacion.totalsiniva }}</td-->
                     <td>{{ cotizacion.porcentajedescuento }}</td>
-                    <td>{{ cotizacion.fechamantenimiento | date:'medium' }}</td>
+                    <!--td>{{ cotizacion.fechamantenimiento | date:'medium' }}</td-->
                     <td>{{ cotizacion.activo }}</td>
                     <td>{{ cotizacion.total }}</td>
                     <td jhiTranslate="{{ 'hometechclaimApp.Estadocotizacion.' + cotizacion.estadocotizacion }}">{{ cotizacion.estadocotizacion }}</td>
                     <td>
                         <div *ngIf="cotizacion.cliente">
-                            <a [routerLink]="['/cliente', cotizacion.cliente?.id, 'view']" >{{ cotizacion.cliente?.id }}</a>
+                            <a [routerLink]="['/cliente', cotizacion.cliente?.id, 'view']" >{{ cotizacion.cliente?.nombre }}</a>
                         </div>
                     </td>
                     <td class="text-right">

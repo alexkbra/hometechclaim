@@ -26,7 +26,7 @@
                     <th scope="col"  jhiSortBy="nombre"><span jhiTranslate="hometechclaimApp.colaboradores.nombre">Nombre</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="correo"><span jhiTranslate="hometechclaimApp.colaboradores.correo">Correo</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="activo"><span jhiTranslate="hometechclaimApp.colaboradores.activo">Activo</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="idusuario"><span jhiTranslate="hometechclaimApp.colaboradores.idusuario">Idusuario</span> <fa-icon icon="sort"></fa-icon></th>
+                    <!--th scope="col"  jhiSortBy="idusuario"><span jhiTranslate="hometechclaimApp.colaboradores.idusuario">Idusuario</span> <fa-icon icon="sort"></fa-icon></th-->
                     <th scope="col"  jhiSortBy="dealer.id"><span jhiTranslate="hometechclaimApp.colaboradores.dealer">Dealer</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"></th>
                 </tr>
@@ -37,10 +37,10 @@
                     <td>{{ colaboradores.nombre }}</td>
                     <td>{{ colaboradores.correo }}</td>
                     <td>{{ colaboradores.activo }}</td>
-                    <td>{{ colaboradores.idusuario }}</td>
+                    <!--td>{{ colaboradores.idusuario }}</td-->
                     <td>
                         <div *ngIf="colaboradores.dealer">
-                            <a [routerLink]="['/dealer', colaboradores.dealer?.id, 'view']" >{{ colaboradores.dealer?.id }}</a>
+                            <a [routerLink]="['/dealer', colaboradores.dealer?.id, 'view']" >{{ colaboradores.dealer?.nombre }}</a>
                         </div>
                     </td>
                     <td class="text-right">

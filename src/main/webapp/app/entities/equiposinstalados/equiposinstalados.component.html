@@ -44,17 +44,17 @@
                     <td>{{ equiposinstalados.cantidad }}</td>
                     <td>
                         <div *ngIf="equiposinstalados.cliente">
-                            <a [routerLink]="['/cliente', equiposinstalados.cliente?.id, 'view']" >{{ equiposinstalados.cliente?.id }}</a>
+                            <a [routerLink]="['/cliente', equiposinstalados.cliente?.id, 'view']" >{{ equiposinstalados.cliente?.nombre }}</a>
                         </div>
                     </td>
                     <td>
                         <div *ngIf="equiposinstalados.equipo">
-                            <a [routerLink]="['/equipo', equiposinstalados.equipo?.id, 'view']" >{{ equiposinstalados.equipo?.id }}</a>
+                            <a [routerLink]="['/equipo', equiposinstalados.equipo?.id, 'view']" >{{ equiposinstalados.equipo?.nombre }}</a>
                         </div>
                     </td>
                     <td>
                         <div *ngIf="equiposinstalados.proyecto">
-                            <a [routerLink]="['/proyecto', equiposinstalados.proyecto?.id, 'view']" >{{ equiposinstalados.proyecto?.id }}</a>
+                            <a [routerLink]="['/proyecto', equiposinstalados.proyecto?.id, 'view']" >{{ equiposinstalados.proyecto?.descripcion }}</a>
                         </div>
                     </td>
                     <td class="text-right">

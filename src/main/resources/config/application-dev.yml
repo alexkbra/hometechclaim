@@ -61,7 +61,7 @@ spring:
     contexts: dev, faker
   mail:
     host: smtp.mailtrap.io
-    port: 25
+    port: 2525
     username: e2db951f13c9d5
     password: 47756a14814d82
   messages:

@@ -5,32 +5,48 @@
     "menu": {
       "home": "Home",
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
+      "dealer": {
+        "main": "Dealer",
+        "comerciales": "Comerciales",
+        "dealer": "Dealer",
+        "colaboradores": "Colaboradores",
+        "cliente": "Cliente",
+        "intereses": "Intereses",
+        "interesesToCliente": "Intereses To Cliente"
+      },
+
+      "novedad": {
+        "main": "Novedad",
+        "novedad": "Novedad",
+        "contenido": "Contenido",
+        "novedadToCliente": "Novedad To Cliente"
+      },
+
+      "requerimiento": {
+        "main": "Requerimiento",
+        "tipoSolucion": "Tipo Solucion",
+        "requerimiento": "Requerimiento",
+        "solucion": "Solucion",
+        "requerimientoToSolucion": "Requerimiento To Solucion"
+      },
+
+      "proyecto": {
+        "main": "Proyecto",
+        "tipoEquipo": "Tipo Equipo",
+        "equipo": "Equipo",
+        "marca": "Marca",
+        "proyecto": "Proyecto",
+        "equiposinstalados": "Equiposinstalados",
+        "cotizacion": "Cotizacion",
+        "equiposcotizadosToEquipos": "Equiposcotizados To Equipos"
+      },
+
       "entities": {
         "main": "Entities",
         "dispositivo": "Dispositivo",
-        "dealer": "Dealer",
-        "cliente": "Cliente",
-        "proyecto": "Proyecto",
-        "equiposinstalados": "Equiposinstalados",
         "departamentos": "Departamentos",
         "municipios": "Municipios",
         "ciudad": "Ciudad",
-        "cotizacion": "Cotizacion",
-        "equiposcotizadosToEquipos": "Equiposcotizados To Equipos",
-        "requerimiento": "Requerimiento",
-        "requerimientoToSolucion": "Requerimiento To Solucion",
-        "tipoSolucion": "Tipo Solucion",
-        "solucion": "Solucion",
-        "tipoEquipo": "Tipo Equipo",
-        "marca": "Marca",
-        "equipo": "Equipo",
-        "novedad": "Novedad",
-        "contenido": "Contenido",
-        "novedadToCliente": "Novedad To Cliente",
-        "intereses": "Intereses",
-        "interesesToCliente": "Intereses To Cliente",
-        "comerciales": "Comerciales",
-        "colaboradores": "Colaboradores",
         "notificaciones": "Notificaciones",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },

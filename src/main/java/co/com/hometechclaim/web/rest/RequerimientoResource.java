@@ -1,7 +1,13 @@
 package co.com.hometechclaim.web.rest;
 
 import co.com.hometechclaim.domain.Requerimiento;
+import co.com.hometechclaim.domain.Solucion;
+import co.com.hometechclaim.domain.enumeration.TipoRequerimiento;
 import co.com.hometechclaim.repository.RequerimientoRepository;
+import co.com.hometechclaim.repository.RequerimientoToSolucionRepository;
+import co.com.hometechclaim.repository.SolucionRepository;
+import co.com.hometechclaim.security.SecurityUtils;
+import co.com.hometechclaim.service.dto.requerimiento.RequerimientoToSolucion;
 import co.com.hometechclaim.web.rest.errors.BadRequestAlertException;
 
 import io.github.jhipster.web.util.HeaderUtil;
@@ -22,6 +28,8 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.time.Instant;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -41,9 +49,13 @@ public class RequerimientoResource {
     private String applicationName;
 
     private final RequerimientoRepository requerimientoRepository;
+    private final SolucionRepository solucionRepository;
+    private final RequerimientoToSolucionRepository requerimientoToSolucionRepository;
 
-    public RequerimientoResource(RequerimientoRepository requerimientoRepository) {
+    public RequerimientoResource(RequerimientoRepository requerimientoRepository,SolucionRepository solucionRepository,RequerimientoToSolucionRepository requerimientoToSolucionRepository) {
         this.requerimientoRepository = requerimientoRepository;
+        this.solucionRepository = solucionRepository;
+        this.requerimientoToSolucionRepository= requerimientoToSolucionRepository;
     }
 
     /**
@@ -63,6 +75,42 @@ public class RequerimientoResource {
         return ResponseEntity.created(new URI("/api/requerimientos/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(applicationName, true, ENTITY_NAME, result.getId().toString()))
             .body(result);
+    }
+    
+    /**
+     * {@code POST  /requerimientos} : Create a new requerimiento.
+     *
+     * @param requerimiento the requerimiento to create.
+     * @return the {@link ResponseEntity} with status {@code 201 (Created)} and with body the new requerimiento, or with status {@code 400 (Bad Request)} if the requerimiento has already an ID.
+     * @throws URISyntaxException if the Location URI syntax is incorrect.
+     */
+    @PostMapping("/requerimientos-create-solucion")
+    public ResponseEntity<String> createRequerimientoCreateSolucion(@Valid @RequestBody RequerimientoToSolucion requerimiento) throws URISyntaxException {
+        log.debug("REST request to save createRequerimientoCreateSolucion : {}", requerimiento);
+        
+        Requerimiento requerimientoEntity = new Requerimiento();
+        requerimientoEntity.setDetalleproblema(requerimiento.getObservacion());
+        requerimientoEntity.setFechacreacion(Instant.now());
+        requerimientoEntity.setIdUsuario(SecurityUtils.getCurrentUserLogin().get());
+        requerimientoEntity.setTipoRequerimiento(TipoRequerimiento.PROBLEMASEQUIPO);
+        
+        requerimientoEntity = requerimientoRepository.save(requerimientoEntity);
+        List<co.com.hometechclaim.domain.RequerimientoToSolucion> listRequerimientoToSolucion = new ArrayList<>();
+        for (String idSolucione : requerimiento.getIdSoluciones()) {
+            co.com.hometechclaim.domain.RequerimientoToSolucion requerimientoToSolucion = new co.com.hometechclaim.domain.RequerimientoToSolucion();
+            requerimientoToSolucion.setSolucion(solucionRepository.findById(Long.parseLong(idSolucione)).get());
+            requerimientoToSolucion.setRequerimiento(requerimientoEntity);
+            requerimientoToSolucion.setFechacreacion(Instant.now());
+            listRequerimientoToSolucion.add(requerimientoToSolucion);
+        }
+        requerimientoToSolucionRepository.saveAll(listRequerimientoToSolucion);
+        
+        
+        System.out.println(SecurityUtils.getCurrentUserLogin());
+        
+        return ResponseEntity.created(new URI("/api/requerimientos/" + requerimientoEntity.getId()))
+            .headers(HeaderUtil.createEntityCreationAlert(applicationName, true, ENTITY_NAME, requerimientoEntity.getId().toString()))
+            .body("Ok");
     }
 
     /**

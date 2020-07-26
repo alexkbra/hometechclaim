@@ -26,11 +26,11 @@
                     <th scope="col"  jhiSortBy="detalleproblema"><span jhiTranslate="hometechclaimApp.requerimiento.detalleproblema">Detalleproblema</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="fechacreacion"><span jhiTranslate="hometechclaimApp.requerimiento.fechacreacion">Fechacreacion</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="fechaactualizacion"><span jhiTranslate="hometechclaimApp.requerimiento.fechaactualizacion">Fechaactualizacion</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="observaciones"><span jhiTranslate="hometechclaimApp.requerimiento.observaciones">Observaciones</span> <fa-icon icon="sort"></fa-icon></th>
+                    <!--th scope="col"  jhiSortBy="observaciones"><span jhiTranslate="hometechclaimApp.requerimiento.observaciones">Observaciones</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="idusuarioatendio"><span jhiTranslate="hometechclaimApp.requerimiento.idusuarioatendio">Idusuarioatendio</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="idusuarioactualizo"><span jhiTranslate="hometechclaimApp.requerimiento.idusuarioactualizo">Idusuarioactualizo</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="idUsuario"><span jhiTranslate="hometechclaimApp.requerimiento.idUsuario">Id Usuario</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="imagen"><span jhiTranslate="hometechclaimApp.requerimiento.imagen">Imagen</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="idusuarioactualizo"><span jhiTranslate="hometechclaimApp.requerimiento.idusuarioactualizo">Idusuarioactualizo</span> <fa-icon icon="sort"></fa-icon></th-->
+                    <th scope="col"  jhiSortBy="idUsuario"><span jhiTranslate="hometechclaimApp.requerimiento.idUsuario">Usuario</span> <fa-icon icon="sort"></fa-icon></th>
+                    <!--th scope="col"  jhiSortBy="imagen"><span jhiTranslate="hometechclaimApp.requerimiento.imagen">Imagen</span> <fa-icon icon="sort"></fa-icon></th-->
                     <th scope="col"  jhiSortBy="estadoRequerimiento"><span jhiTranslate="hometechclaimApp.requerimiento.estadoRequerimiento">Estado Requerimiento</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="tipoRequerimiento"><span jhiTranslate="hometechclaimApp.requerimiento.tipoRequerimiento">Tipo Requerimiento</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"></th>
@@ -42,16 +42,16 @@
                     <td>{{ requerimiento.detalleproblema }}</td>
                     <td>{{ requerimiento.fechacreacion | date:'medium' }}</td>
                     <td>{{ requerimiento.fechaactualizacion | date:'medium' }}</td>
-                    <td>{{ requerimiento.observaciones }}</td>
+                    <!--td>{{ requerimiento.observaciones }}</td>
                     <td>{{ requerimiento.idusuarioatendio }}</td>
-                    <td>{{ requerimiento.idusuarioactualizo }}</td>
+                    <td>{{ requerimiento.idusuarioactualizo }}</td-->
                     <td>{{ requerimiento.idUsuario }}</td>
-                    <td>
+                    <!--td>
                         <a *ngIf="requerimiento.imagen" (click)="openFile(requerimiento.imagenContentType, requerimiento.imagen)">
                             <img [src]="'data:' + requerimiento.imagenContentType + ';base64,' + requerimiento.imagen" style="max-height: 30px;" alt="requerimiento image"/>
                         </a>
                         <span *ngIf="requerimiento.imagen">{{ requerimiento.imagenContentType }}, {{ byteSize(requerimiento.imagen) }}</span>
-                    </td>
+                    </td-->
                     <td jhiTranslate="{{ 'hometechclaimApp.EstadoRequerimiento.' + requerimiento.estadoRequerimiento }}">{{ requerimiento.estadoRequerimiento }}</td>
                     <td jhiTranslate="{{ 'hometechclaimApp.TipoRequerimiento.' + requerimiento.tipoRequerimiento }}">{{ requerimiento.tipoRequerimiento }}</td>
                     <td class="text-right">

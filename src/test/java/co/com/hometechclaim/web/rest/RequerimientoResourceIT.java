@@ -32,6 +32,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import co.com.hometechclaim.domain.enumeration.EstadoRequerimiento;
 import co.com.hometechclaim.domain.enumeration.TipoRequerimiento;
+import co.com.hometechclaim.repository.RequerimientoToSolucionRepository;
+import co.com.hometechclaim.repository.SolucionRepository;
 /**
  * Integration tests for the {@link RequerimientoResource} REST controller.
  */
@@ -72,6 +74,12 @@ public class RequerimientoResourceIT {
 
     @Autowired
     private RequerimientoRepository requerimientoRepository;
+    
+    @Autowired
+    private SolucionRepository solucionRepository;
+    
+    @Autowired
+    private RequerimientoToSolucionRepository requerimientoToSolucionRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;
@@ -95,7 +103,7 @@ public class RequerimientoResourceIT {
     @BeforeEach
     public void setup() {
         MockitoAnnotations.initMocks(this);
-        final RequerimientoResource requerimientoResource = new RequerimientoResource(requerimientoRepository);
+        final RequerimientoResource requerimientoResource = new RequerimientoResource(requerimientoRepository, solucionRepository, requerimientoToSolucionRepository);
         this.restRequerimientoMockMvc = MockMvcBuilders.standaloneSetup(requerimientoResource)
             .setCustomArgumentResolvers(pageableArgumentResolver)
             .setControllerAdvice(exceptionTranslator)

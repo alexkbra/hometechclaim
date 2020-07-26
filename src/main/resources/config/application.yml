@@ -131,7 +131,7 @@ jhipster:
   #     allow-credentials: true
   #     max-age: 1800
   mail:
-    from: hometechclaim@localhost
+    from: 5bb9085e41-99ad04@inbox.mailtrap.io
   swagger:
     default-include-pattern: /api/.*
     title: hometechclaim API

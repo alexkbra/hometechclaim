@@ -3,15 +3,15 @@
     "notificaciones": {
       "home": {
         "title": "Notificaciones",
-        "createLabel": "Crear nuevo Notificaciones",
-        "createOrEditLabel": "Crear o editar Notificaciones",
-        "notFound": "Ningún Notificaciones encontrado"
+        "createLabel": "Crear nueva notificación",
+        "createOrEditLabel": "Crear o editar notificación",
+        "notFound": "Notificación no encontrada"
       },
-      "created": "Un nuevo Notificaciones ha sido creado con el identificador {{ param }}",
-      "updated": "Un Notificaciones ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Notificaciones ha sido eliminado con el identificador {{ param }}",
+      "created": "Una nueva notificación ha sido creada con el identificador {{ param }}",
+      "updated": "Una notificación ha sido actualizada con el identificador {{ param }}",
+      "deleted": "Una notificación ha sido eliminado con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Notificaciones {{ id }}?"
+        "question": "¿Seguro que quiere eliminar la notificación {{ id }}?"
       },
       "detail": {
         "title": "Notificaciones"

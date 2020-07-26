@@ -2,24 +2,24 @@
   "hometechclaimApp": {
     "equiposinstalados": {
       "home": {
-        "title": "Equiposinstalados",
-        "createLabel": "Crear nuevo Equiposinstalados",
-        "createOrEditLabel": "Crear o editar Equiposinstalados",
-        "notFound": "Ningún Equiposinstalados encontrado"
+        "title": "Equipos instalados",
+        "createLabel": "Crear nuevo equipo instalados",
+        "createOrEditLabel": "Crear o editar un equipo instalado",
+        "notFound": "Equipo instalado no encontrado"
       },
-      "created": "Un nuevo Equiposinstalados ha sido creado con el identificador {{ param }}",
-      "updated": "Un Equiposinstalados ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Equiposinstalados ha sido eliminado con el identificador {{ param }}",
+      "created": "Un nuevo equipo instalado ha sido creado con el identificador {{ param }}",
+      "updated": "Un equipo instalado ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un equipo instalado ha sido eliminado con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Equiposinstalados {{ id }}?"
+        "question": "¿Seguro que quiere eliminar el equipo instalado {{ id }}?"
       },
       "detail": {
-        "title": "Equiposinstalados"
+        "title": "Equipos instalados"
       },
-      "descripcion": "Descripcion",
-      "observacion": "Observacion",
-      "fechainstalacion": "Fechainstalacion",
-      "posibleactuliazcion": "Posibleactuliazcion",
+      "descripcion": "Descripción",
+      "observacion": "Observación",
+      "fechainstalacion": "Fecha instalación",
+      "posibleactuliazcion": "Posible actualización",
       "cantidad": "Cantidad",
       "cliente": "Cliente",
       "equipo": "Equipo",

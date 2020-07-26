@@ -3,15 +3,15 @@
     "departamentos": {
       "home": {
         "title": "Departamentos",
-        "createLabel": "Crear nuevo Departamentos",
-        "createOrEditLabel": "Crear o editar Departamentos",
-        "notFound": "Ningún Departamentos encontrado"
+        "createLabel": "Crear nuevo Departamento",
+        "createOrEditLabel": "Crear o editar Departamento",
+        "notFound": "Departamento no encontrado"
       },
-      "created": "Un nuevo Departamentos ha sido creado con el identificador {{ param }}",
-      "updated": "Un Departamentos ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Departamentos ha sido eliminado con el identificador {{ param }}",
+      "created": "Un nuevo Departamento ha sido creado con el identificador {{ param }}",
+      "updated": "Un Departamento ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Departamento ha sido eliminado con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Departamentos {{ id }}?"
+        "question": "¿Seguro que quiere eliminar el Departamento {{ id }}?"
       },
       "detail": {
         "title": "Departamentos"

@@ -5,7 +5,7 @@
         "title": "Dispositivos",
         "createLabel": "Crear nuevo Dispositivo",
         "createOrEditLabel": "Crear o editar Dispositivo",
-        "notFound": "Ningún Dispositivos encontrado"
+        "notFound": "Dispositivo no encontrado"
       },
       "created": "Un nuevo Dispositivo ha sido creado con el identificador {{ param }}",
       "updated": "Un Dispositivo ha sido actualizado con el identificador {{ param }}",

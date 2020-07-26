@@ -2,25 +2,25 @@
   "hometechclaimApp": {
     "novedad": {
       "home": {
-        "title": "Novedads",
-        "createLabel": "Crear nuevo Novedad",
-        "createOrEditLabel": "Crear o editar Novedad",
-        "notFound": "Ningún Novedads encontrado"
+        "title": "Novedades",
+        "createLabel": "Crear nueva novedad",
+        "createOrEditLabel": "Crear o editar novedad",
+        "notFound": "Novedad no encontrada"
       },
-      "created": "Un nuevo Novedad ha sido creado con el identificador {{ param }}",
-      "updated": "Un Novedad ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Novedad ha sido eliminado con el identificador {{ param }}",
+      "created": "Una nueva novedad ha sido creada con el identificador {{ param }}",
+      "updated": "Una novedad ha sido actualizada con el identificador {{ param }}",
+      "deleted": "Una novedad ha sido eliminada con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Novedad {{ id }}?"
+        "question": "¿Seguro que quiere eliminar la novedad {{ id }}?"
       },
       "detail": {
         "title": "Novedad"
       },
       "titulo": "Titulo",
       "subtitulo": "Subtitulo",
-      "descripcion": "Descripcion",
+      "descripcion": "Descripción",
       "imagen": "Imagen",
-      "novedadToCliente": "Novedad To Cliente",
+      "novedadToCliente": "Novedad del Cliente",
       "contenido": "Contenido"
     }
   }

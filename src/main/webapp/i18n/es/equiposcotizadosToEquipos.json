@@ -2,27 +2,27 @@
   "hometechclaimApp": {
     "equiposcotizadosToEquipos": {
       "home": {
-        "title": "Equiposcotizados To Equipos",
-        "createLabel": "Crear nuevo Equiposcotizados To Equipos",
-        "createOrEditLabel": "Crear o editar Equiposcotizados To Equipos",
-        "notFound": "Ningún Equiposcotizados To Equipos encontrado"
+        "title": "Equipos cotizados",
+        "createLabel": "Crear nuevo equipo cotizado",
+        "createOrEditLabel": "Crear o editar equipo cotizado",
+        "notFound": "Equipo cotizado no encontrado"
       },
-      "created": "Un nuevo Equiposcotizados To Equipos ha sido creado con el identificador {{ param }}",
-      "updated": "Un Equiposcotizados To Equipos ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Equiposcotizados To Equipos ha sido eliminado con el identificador {{ param }}",
+      "created": "Un nuevo equipo cotizado ha sido creado con el identificador {{ param }}",
+      "updated": "Un equipo cotizado ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un equipo cotizado ha sido eliminado con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Equiposcotizados To Equipos {{ id }}?"
+        "question": "¿Seguro que quiere eliminar el equipo cotizado {{ id }}?"
       },
       "detail": {
-        "title": "Equiposcotizados To Equipos"
+        "title": "Equipos cotizados"
       },
       "valorUnidad": "Valor Unidad",
       "valorUtilUnidad": "Valor Util Unidad",
       "descuentoUnidad": "Descuento Unidad",
-      "fechacotizacion": "Fechacotizacion",
+      "fechacotizacion": "Fecha cotizacion",
       "cantidadEquipos": "Cantidad Equipos",
       "cotizacion": "Cotizacion",
-      "equiposcotizadosToEquipos": "Equiposcotizados To Equipos"
+      "equiposcotizadosToEquipos": "Equipos cotizados"
     }
   }
 }

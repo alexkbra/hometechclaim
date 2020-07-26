@@ -2,11 +2,11 @@
   "hometechclaimApp": {
     "EstadoRequerimiento": {
       "null": "",
-      "INICIADO": "INICIADO",
-      "ENPROCESO": "ENPROCESO",
-      "RESUELTO": "RESUELTO",
-      "PROBLEMA": "PROBLEMA",
-      "PROBLEMAMAYOR": "PROBLEMAMAYOR"
+      "INICIADO": "Iniciado",
+      "ENPROCESO": "En proceso",
+      "RESUELTO": "Resuelto",
+      "PROBLEMA": "Problema",
+      "PROBLEMAMAYOR": "Problema mayor"
     }
   }
 }

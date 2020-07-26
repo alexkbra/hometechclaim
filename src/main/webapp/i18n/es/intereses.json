@@ -3,24 +3,24 @@
     "intereses": {
       "home": {
         "title": "Intereses",
-        "createLabel": "Crear nuevo Intereses",
-        "createOrEditLabel": "Crear o editar Intereses",
-        "notFound": "Ningún Intereses encontrado"
+        "createLabel": "Crear nuevo interés",
+        "createOrEditLabel": "Crear o editar interés",
+        "notFound": "Interés no encontrado"
       },
-      "created": "Un nuevo Intereses ha sido creado con el identificador {{ param }}",
-      "updated": "Un Intereses ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Intereses ha sido eliminado con el identificador {{ param }}",
+      "created": "Un nuevo interés ha sido creado con el identificador {{ param }}",
+      "updated": "Un interés ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un interés ha sido eliminado con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Intereses {{ id }}?"
+        "question": "¿Seguro que quiere eliminar el interés {{ id }}?"
       },
       "detail": {
         "title": "Intereses"
       },
       "nombre": "Nombre",
-      "descripcion": "Descripcion",
+      "descripcion": "Descripción",
       "imagen": "Imagen",
-      "code": "Code",
-      "interesesToCliente": "Intereses To Cliente"
+      "code": "Codigo",
+      "interesesToCliente": "Intereses del Cliente"
     }
   }
 }

@@ -2,9 +2,9 @@
   "hometechclaimApp": {
     "Areas": {
       "null": "",
-      "SRVICIOALCLIENTE": "SRVICIOALCLIENTE",
-      "AREATECNICA": "AREATECNICA",
-      "GERENCIA": "GERENCIA"
+      "SRVICIOALCLIENTE": "Servicio al cliente",
+      "AREATECNICA": "Area técnica",
+      "GERENCIA": "Gerencia"
     }
   }
 }

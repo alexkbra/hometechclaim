@@ -2,27 +2,27 @@
   "hometechclaimApp": {
     "solucion": {
       "home": {
-        "title": "Solucions",
-        "createLabel": "Crear nuevo Solucion",
-        "createOrEditLabel": "Crear o editar Solucion",
-        "notFound": "Ningún Solucions encontrado"
+        "title": "Soluciones",
+        "createLabel": "Crear nueva solución",
+        "createOrEditLabel": "Crear o editar solución",
+        "notFound": "Solucion encontrado"
       },
-      "created": "Un nuevo Solucion ha sido creado con el identificador {{ param }}",
-      "updated": "Un Solucion ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Solucion ha sido eliminado con el identificador {{ param }}",
+      "created": "Una nueva solución ha sido creada con el identificador {{ param }}",
+      "updated": "Una solución ha sido actualizada con el identificador {{ param }}",
+      "deleted": "Una solución ha sido eliminada con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Solucion {{ id }}?"
+        "question": "¿Seguro que quiere eliminar la solución {{ id }}?"
       },
       "detail": {
-        "title": "Solucion"
+        "title": "Solución"
       },
       "nombre": "Nombre",
-      "descripcion": "Descripcion",
+      "descripcion": "Descripción",
       "code": "Code",
       "imagenUrl": "Imagen Url",
-      "requerimientoToSolucion": "Requerimiento To Solucion",
-      "tipoEquipo": "Tipo Equipo",
-      "tipoSolucion": "Tipo Solucion"
+      "requerimientoToSolucion": "Requerimiento a solución",
+      "tipoEquipo": "Tipo equipo",
+      "tipoSolucion": "Tipo solución"
     }
   }
 }

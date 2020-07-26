@@ -5,13 +5,13 @@
         "title": "Dealers",
         "createLabel": "Crear nuevo Dealer",
         "createOrEditLabel": "Crear o editar Dealer",
-        "notFound": "Ningún Dealers encontrado"
+        "notFound": "Dealer no encontrado"
       },
       "created": "Un nuevo Dealer ha sido creado con el identificador {{ param }}",
       "updated": "Un Dealer ha sido actualizado con el identificador {{ param }}",
       "deleted": "Un Dealer ha sido eliminado con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Dealer {{ id }}?"
+        "question": "¿Seguro que quiere eliminar el Dealer {{ id }}?"
       },
       "detail": {
         "title": "Dealer"
@@ -20,9 +20,9 @@
       "correo": "Correo",
       "codigo": "Codigo",
       "idciudad": "Idciudad",
-      "direccion": "Direccion",
-      "telefonofijo": "Telefonofijo",
-      "telefonocelular": "Telefonocelular",
+      "direccion": "Dirección",
+      "telefonofijo": "Telefono fijo",
+      "telefonocelular": "Telefono celular",
       "idusuario": "Idusuario",
       "colaboradores": "Colaboradores",
       "cliente": "Cliente",

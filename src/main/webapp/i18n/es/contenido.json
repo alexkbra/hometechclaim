@@ -5,24 +5,24 @@
         "title": "Contenidos",
         "createLabel": "Crear nuevo Contenido",
         "createOrEditLabel": "Crear o editar Contenido",
-        "notFound": "Ningún Contenidos encontrado"
+        "notFound": "Contenido no encontrado"
       },
       "created": "Un nuevo Contenido ha sido creado con el identificador {{ param }}",
       "updated": "Un Contenido ha sido actualizado con el identificador {{ param }}",
       "deleted": "Un Contenido ha sido eliminado con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Contenido {{ id }}?"
+        "question": "¿Seguro que quiere eliminar el Contenido {{ id }}?"
       },
       "detail": {
         "title": "Contenido"
       },
       "descripcion": "Descripcion",
       "videoUrl": "Video Url",
-      "imagenURl": "Imagen U Rl",
+      "imagenURl": "Imagen Url",
       "audio": "Audio",
       "tipoContenido": "Tipo Contenido",
       "activo": "Activo",
-      "fechacreacion": "Fechacreacion",
+      "fechacreacion": "Fecha creación",
       "novedad": "Novedad"
     }
   }

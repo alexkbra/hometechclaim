@@ -3,29 +3,29 @@
     "proyecto": {
       "home": {
         "title": "Proyectos",
-        "createLabel": "Crear nuevo Proyecto",
-        "createOrEditLabel": "Crear o editar Proyecto",
-        "notFound": "Ningún Proyectos encontrado"
+        "createLabel": "Crear nuevo proyecto",
+        "createOrEditLabel": "Crear o editar proyecto",
+        "notFound": "Proyecto no encontrado"
       },
-      "created": "Un nuevo Proyecto ha sido creado con el identificador {{ param }}",
-      "updated": "Un Proyecto ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Proyecto ha sido eliminado con el identificador {{ param }}",
+      "created": "Un nuevo proyecto ha sido creado con el identificador {{ param }}",
+      "updated": "Un proyecto ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un proyecto ha sido eliminado con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Proyecto {{ id }}?"
+        "question": "¿Seguro que quiere eliminar el proyecto {{ id }}?"
       },
       "detail": {
         "title": "Proyecto"
       },
-      "fechacreacion": "Fechacreacion",
-      "descripcion": "Descripcion",
-      "valoriva": "Valoriva",
-      "totalsiniva": "Totalsiniva",
-      "fechaultimomantenimiento": "Fechaultimomantenimiento",
-      "porcentajedescuento": "Porcentajedescuento",
+      "fechacreacion": "Fecha creación",
+      "descripcion": "Descripción",
+      "valoriva": "Valor IVA",
+      "totalsiniva": "Total sin IVA",
+      "fechaultimomantenimiento": "Fecha ultimo mantenimiento",
+      "porcentajedescuento": "Porcentaje descuento",
       "total": "Total",
       "activo": "Activo",
       "imagen": "Imagen",
-      "equiposinstalados": "Equiposinstalados"
+      "equiposinstalados": "Equipos instalados"
     }
   }
 }

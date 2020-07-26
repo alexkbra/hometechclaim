@@ -3,22 +3,22 @@
     "marca": {
       "home": {
         "title": "Marcas",
-        "createLabel": "Crear nuevo Marca",
-        "createOrEditLabel": "Crear o editar Marca",
-        "notFound": "Ningún Marcas encontrado"
+        "createLabel": "Crear nueva marca",
+        "createOrEditLabel": "Crear o editar marca",
+        "notFound": "Marca no encontrada"
       },
-      "created": "Un nuevo Marca ha sido creado con el identificador {{ param }}",
-      "updated": "Un Marca ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Marca ha sido eliminado con el identificador {{ param }}",
+      "created": "Una nueva marca ha sido creado con el identificador {{ param }}",
+      "updated": "Una marca ha sido actualizada con el identificador {{ param }}",
+      "deleted": "Una marca ha sido eliminada con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Marca {{ id }}?"
+        "question": "¿Seguro que quiere eliminar la marca {{ id }}?"
       },
       "detail": {
         "title": "Marca"
       },
       "nombre": "Nombre",
       "imagenUrl": "Imagen Url",
-      "code": "Code",
+      "code": "Codigo marca",
       "equipo": "Equipo",
       "tipoEquipo": "Tipo Equipo"
     }

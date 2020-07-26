@@ -2,14 +2,14 @@
   "hometechclaimApp": {
     "ciudad": {
       "home": {
-        "title": "Ciudads",
-        "createLabel": "Crear nuevo Ciudad",
+        "title": "Ciudad",
+        "createLabel": "Crear nueva Ciudad",
         "createOrEditLabel": "Crear o editar Ciudad",
-        "notFound": "Ningún Ciudads encontrado"
+        "notFound": "Ciudad no encontrada"
       },
-      "created": "Un nuevo Ciudad ha sido creado con el identificador {{ param }}",
-      "updated": "Un Ciudad ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Ciudad ha sido eliminado con el identificador {{ param }}",
+      "created": "Una nueva Ciudad ha sido creada con el identificador {{ param }}",
+      "updated": "Una Ciudad ha sido actualizada con el identificador {{ param }}",
+      "deleted": "Una Ciudad ha sido eliminada con el identificador {{ param }}",
       "delete": {
         "question": "¿Seguro que quiere eliminar Ciudad {{ id }}?"
       },

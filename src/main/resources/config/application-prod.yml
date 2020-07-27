@@ -66,6 +66,12 @@ spring:
     port: 587
     username: sistemas@hometechcolombia.com
     password: SystemITHome
+    protocol: smtp
+    tls: true
+    properties.mail.smtp:
+      auth: true
+      starttls.enable: true
+      ssl.trust: smtp.gmail.com
   thymeleaf:
     cache: true
 

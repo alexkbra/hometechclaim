@@ -3,15 +3,15 @@
     "dispositivo": {
       "home": {
         "title": "Dispositivos",
-        "createLabel": "Crear nuevo Dispositivo",
-        "createOrEditLabel": "Crear o editar Dispositivo",
+        "createLabel": "Crear nuevo dispositivo",
+        "createOrEditLabel": "Crear o editar dispositivo",
         "notFound": "Dispositivo no encontrado"
       },
-      "created": "Un nuevo Dispositivo ha sido creado con el identificador {{ param }}",
-      "updated": "Un Dispositivo ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Dispositivo ha sido eliminado con el identificador {{ param }}",
+      "created": "Un nuevo dispositivo ha sido creado con el identificador {{ param }}",
+      "updated": "Un dispositivo ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un dispositivo ha sido eliminado con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Dispositivo {{ id }}?"
+        "question": "¿Seguro que quiere eliminar el dispositivo {{ id }}?"
       },
       "detail": {
         "title": "Dispositivo"

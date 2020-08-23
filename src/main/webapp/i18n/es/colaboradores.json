@@ -3,15 +3,15 @@
     "colaboradores": {
       "home": {
         "title": "Colaboradores",
-        "createLabel": "Crear nuevo Colaboradores",
-        "createOrEditLabel": "Crear o editar Colaboradores",
+        "createLabel": "Crear nuevo colaboradores",
+        "createOrEditLabel": "Crear o editar colaboradores",
         "notFound": "Colaborador no encontrado"
       },
-      "created": "Un nuevo Colaborador ha sido creado con el identificador {{ param }}",
-      "updated": "Un Colaborador ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Colaborador ha sido eliminado con el identificador {{ param }}",
+      "created": "Un nuevo colaborador ha sido creado con el identificador {{ param }}",
+      "updated": "Un colaborador ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un colaborador ha sido eliminado con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar el Colaborador {{ id }}?"
+        "question": "¿Seguro que quiere eliminar el colaborador {{ id }}?"
       },
       "detail": {
         "title": "Colaboradores"

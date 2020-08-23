@@ -2,19 +2,19 @@
   "hometechclaimApp": {
     "tipoEquipo": {
       "home": {
-        "title": "Tipo Equipos",
-        "createLabel": "Crear nuevo Tipo equipo",
-        "createOrEditLabel": "Crear o editar Tipo equipo",
-        "notFound": "Tipo equipo no encontrado"
+        "title": "Tipo de equipos",
+        "createLabel": "Crear nuevo tipo de equipo",
+        "createOrEditLabel": "Crear o editar tipo de equipo",
+        "notFound": "Tipo de equipo no encontrado"
       },
-      "created": "Un nuevo Tipo equipo ha sido creado con el identificador {{ param }}",
-      "updated": "Un Tipo equipo ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Tipo equipo ha sido eliminado con el identificador {{ param }}",
+      "created": "Un nuevo tipo de equipo ha sido creado con el identificador {{ param }}",
+      "updated": "Un tipo de equipo ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un tipo de equipo ha sido eliminado con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar el Tipo equipo {{ id }}?"
+        "question": "¿Seguro que quiere eliminar el tipo de equipo {{ id }}?"
       },
       "detail": {
-        "title": "Tipo Equipo"
+        "title": "Tipo de equipo"
       },
       "nombre": "Nombre",
       "descripcion": "Descripción",

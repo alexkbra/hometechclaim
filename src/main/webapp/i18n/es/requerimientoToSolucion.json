@@ -2,21 +2,21 @@
   "hometechclaimApp": {
     "requerimientoToSolucion": {
       "home": {
-        "title": "Requerimiento a Solución",
-        "createLabel": "Crear nuevo Requerimiento a solución",
-        "createOrEditLabel": "Crear o editar Requerimiento a solución",
+        "title": "Requerimiento y Solución",
+        "createLabel": "Crear nuevo Requerimiento y solución",
+        "createOrEditLabel": "Crear o editar Requerimiento y solución",
         "notFound": "Requerimiento a solución no encontrado"
       },
-      "created": "Un nuevo Requerimiento a solución ha sido creado con el identificador {{ param }}",
-      "updated": "Un Requerimiento a solución ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Requerimiento a solución ha sido eliminado con el identificador {{ param }}",
+      "created": "Un nuevo Requerimiento y solución ha sido creado con el identificador {{ param }}",
+      "updated": "Un Requerimiento y solución ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Requerimiento y solución ha sido eliminado con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar el Requerimiento a solución {{ id }}?"
+        "question": "¿Seguro que quiere eliminar el Requerimiento y solución {{ id }}?"
       },
       "detail": {
-        "title": "Requerimiento a solución"
+        "title": "Requerimiento y solución"
       },
-      "fechacreacion": "Fecha creación",
+      "fechacreacion": "Fecha de creación",
       "requerimiento": "Requerimiento",
       "solucion": "Solución"
     }

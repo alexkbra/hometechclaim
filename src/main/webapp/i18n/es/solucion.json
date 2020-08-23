@@ -20,7 +20,7 @@
       "descripcion": "Descripción",
       "code": "Code",
       "imagenUrl": "Imagen Url",
-      "requerimientoToSolucion": "Requerimiento a solución",
+      "requerimientoToSolucion": "Requerimiento y solución",
       "tipoEquipo": "Tipo equipo",
       "tipoSolucion": "Tipo solución"
     }

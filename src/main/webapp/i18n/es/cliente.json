@@ -11,7 +11,7 @@
       "updated": "Un Cliente ha sido actualizado con el identificador {{ param }}",
       "deleted": "Un Cliente ha sido eliminado con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Cliente {{ id }}?"
+        "question": "¿Seguro que quiere eliminar al Cliente {{ id }}?"
       },
       "detail": {
         "title": "Cliente"
@@ -19,20 +19,20 @@
       "nombre": "Nombre",
       "apellido": "Apellido",
       "correo": "Correo",
-      "codigoDealer": "Codigo Dealer",
+      "codigoDealer": "Código Dealer",
       "idciudad": "Idciudad",
-      "telefonocelular": "Telefono celular",
-      "telefonofijo": "Telefono fijo",
-      "telefonoempresarial": "Telefono empresarial",
-      "direccionresidencial": "Direccion residencial",
-      "direccionempresarial": "Direccion empresarial",
+      "telefonocelular": "Teléfono celular",
+      "telefonofijo": "Teléfono fijo",
+      "telefonoempresarial": "Teléfono empresarial",
+      "direccionresidencial": "Dirección residencial",
+      "direccionempresarial": "Dirección empresarial",
       "fechanacimiento": "Fecha nacimiento",
       "idusuario": "Idusuario",
       "imagen": "Imagen",
       "interesesToCliente": "Intereses del Cliente",
       "novedadToCliente": "Novedad del Cliente",
       "equiposinstalados": "Equipos instalados",
-      "cotizacion": "Cotizacion",
+      "cotizacion": "Cotización",
       "dealer": "Dealer"
     }
   }

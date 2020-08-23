@@ -19,7 +19,7 @@
       "nombre": "Nombre",
       "descripcion": "Descripción",
       "imagen": "Imagen",
-      "code": "Codigo",
+      "code": "Código",
       "interesesToCliente": "Intereses del Cliente"
     }
   }

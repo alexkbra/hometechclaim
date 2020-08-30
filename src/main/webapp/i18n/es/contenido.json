@@ -7,20 +7,20 @@
         "createOrEditLabel": "Crear o editar Contenido",
         "notFound": "Contenido no encontrado"
       },
-      "created": "Un nuevo Contenido ha sido creado con el identificador {{ param }}",
-      "updated": "Un Contenido ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Contenido ha sido eliminado con el identificador {{ param }}",
+      "created": "Un nuevo contenido ha sido creado con el identificador {{ param }}",
+      "updated": "Un contenido ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un contenido ha sido eliminado con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar el Contenido {{ id }}?"
+        "question": "¿Seguro que quiere eliminar el contenido {{ id }}?"
       },
       "detail": {
         "title": "Contenido"
       },
-      "descripcion": "Descripcion",
+      "descripcion": "Descripción",
       "videoUrl": "Video Url",
       "imagenURl": "Imagen Url",
       "audio": "Audio",
-      "tipoContenido": "Tipo Contenido",
+      "tipoContenido": "Tipo contenido",
       "activo": "Activo",
       "fechacreacion": "Fecha creación",
       "novedad": "Novedad"

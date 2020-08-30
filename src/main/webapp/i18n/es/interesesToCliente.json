@@ -3,7 +3,7 @@
     "interesesToCliente": {
       "home": {
         "title": "Intereses del cliente",
-        "createLabel": "Crear nuevo Interés del cliente",
+        "createLabel": "Crear nuevo interés del cliente",
         "createOrEditLabel": "Crear o editar el interés del cliente",
         "notFound": "Interés del cliente no encontrado"
       },
@@ -14,9 +14,9 @@
         "question": "¿Seguro que quiere eliminar el interés del cliente {{ id }}?"
       },
       "detail": {
-        "title": "Intereses del Cliente"
+        "title": "Intereses del cliente"
       },
-      "fechacreacion": "Fecha creación",
+      "fechacreacion": "Fecha de creación",
       "cliente": "Cliente",
       "intereses": "Intereses"
     }

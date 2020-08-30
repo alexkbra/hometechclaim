@@ -2,7 +2,7 @@
   "hometechclaimApp": {
     "tipoSolucion": {
       "home": {
-        "title": "Tipo de Soluciones",
+        "title": "Tipo de soluciones",
         "createLabel": "Crear nuevo tipo de solución",
         "createOrEditLabel": "Crear o editar tipo de solución",
         "notFound": "tipo de solución no encontrada"

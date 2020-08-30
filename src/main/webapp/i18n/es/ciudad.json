@@ -11,7 +11,7 @@
       "updated": "Una Ciudad ha sido actualizada con el identificador {{ param }}",
       "deleted": "Una Ciudad ha sido eliminada con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Ciudad {{ id }}?"
+        "question": "¿Seguro que quiere eliminar la Ciudad {{ id }}?"
       },
       "detail": {
         "title": "Ciudad"

@@ -3,25 +3,25 @@
     "cotizacion": {
       "home": {
         "title": "Cotización",
-        "createLabel": "Crear nueva Cotización",
-        "createOrEditLabel": "Crear o editar Cotización",
-        "notFound": "Cotizacion no encontrada"
+        "createLabel": "Crear nueva cotización",
+        "createOrEditLabel": "Crear o editar cotización",
+        "notFound": "Cotización no encontrada"
       },
-      "created": "Una nueva Cotización ha sido creada con el identificador {{ param }}",
-      "updated": "Una Cotización ha sido actualizada con el identificador {{ param }}",
-      "deleted": "Una Cotización ha sido eliminada con el identificador {{ param }}",
+      "created": "Una nueva cotización ha sido creada con el identificador {{ param }}",
+      "updated": "Una cotización ha sido actualizada con el identificador {{ param }}",
+      "deleted": "Una cotización ha sido eliminada con el identificador {{ param }}",
       "delete": {
         "question": "¿Seguro que quiere eliminar la Cotizacion {{ id }}?"
       },
       "detail": {
         "title": "Cotización"
       },
-      "fechacreacion": "Fecha creacion",
+      "fechacreacion": "Fecha de creación",
       "descripcion": "Descripción",
       "valoriva": "Valor IVA",
       "totalsiniva": "Total sin IVA",
       "porcentajedescuento": "Porcentaje descuento",
-      "fechamantenimiento": "Fecha mantenimiento",
+      "fechamantenimiento": "Fecha de mantenimiento",
       "activo": "Activo",
       "total": "Total",
       "estadocotizacion": "Estado cotización",

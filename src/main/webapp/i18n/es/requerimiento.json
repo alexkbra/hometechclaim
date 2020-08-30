@@ -17,8 +17,8 @@
         "title": "Requerimiento"
       },
       "detalleproblema": "Detalle del problema",
-      "fechacreacion": "Fecha creación",
-      "fechaactualizacion": "Fecha actualización",
+      "fechacreacion": "Fecha de creación",
+      "fechaactualizacion": "Fecha de actualización",
       "observaciones": "Observaciones",
       "idusuarioatendio": "Idusuarioatendio",
       "idusuarioactualizo": "Idusuarioactualizo",

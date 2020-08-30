@@ -9,7 +9,7 @@
       },
       "created": "Una nueva notificación ha sido creada con el identificador {{ param }}",
       "updated": "Una notificación ha sido actualizada con el identificador {{ param }}",
-      "deleted": "Una notificación ha sido eliminado con el identificador {{ param }}",
+      "deleted": "Una notificación ha sido eliminada con el identificador {{ param }}",
       "delete": {
         "question": "¿Seguro que quiere eliminar la notificación {{ id }}?"
       },

@@ -2,6 +2,7 @@ package co.com.hometechclaim.web.rest;
 
 import co.com.hometechclaim.domain.Requerimiento;
 import co.com.hometechclaim.domain.Solucion;
+import co.com.hometechclaim.domain.enumeration.EstadoRequerimiento;
 import co.com.hometechclaim.domain.enumeration.TipoRequerimiento;
 import co.com.hometechclaim.repository.RequerimientoRepository;
 import co.com.hometechclaim.repository.RequerimientoToSolucionRepository;
@@ -93,6 +94,44 @@ public class RequerimientoResource {
         requerimientoEntity.setFechacreacion(Instant.now());
         requerimientoEntity.setIdUsuario(SecurityUtils.getCurrentUserLogin().get());
         requerimientoEntity.setTipoRequerimiento(TipoRequerimiento.PROBLEMASEQUIPO);
+        requerimientoEntity.setEstadoRequerimiento(EstadoRequerimiento.INICIADO);
+        
+        requerimientoEntity = requerimientoRepository.save(requerimientoEntity);
+        List<co.com.hometechclaim.domain.RequerimientoToSolucion> listRequerimientoToSolucion = new ArrayList<>();
+        for (String idSolucione : requerimiento.getIdSoluciones()) {
+            co.com.hometechclaim.domain.RequerimientoToSolucion requerimientoToSolucion = new co.com.hometechclaim.domain.RequerimientoToSolucion();
+            requerimientoToSolucion.setSolucion(solucionRepository.findById(Long.parseLong(idSolucione)).get());
+            requerimientoToSolucion.setRequerimiento(requerimientoEntity);
+            requerimientoToSolucion.setFechacreacion(Instant.now());
+            listRequerimientoToSolucion.add(requerimientoToSolucion);
+        }
+        requerimientoToSolucionRepository.saveAll(listRequerimientoToSolucion);
+        
+        
+        System.out.println(SecurityUtils.getCurrentUserLogin());
+        
+        return ResponseEntity.created(new URI("/api/requerimientos/" + requerimientoEntity.getId()))
+            .headers(HeaderUtil.createEntityCreationAlert(applicationName, true, ENTITY_NAME, requerimientoEntity.getId().toString()))
+            .body("Ok");
+    }
+
+    /**
+     * {@code POST  /requerimientos} : Create a new requerimiento.
+     *
+     * @param requerimiento the requerimiento to create.
+     * @return the {@link ResponseEntity} with status {@code 201 (Created)} and with body the new requerimiento, or with status {@code 400 (Bad Request)} if the requerimiento has already an ID.
+     * @throws URISyntaxException if the Location URI syntax is incorrect.
+     */
+    @PostMapping("/requerimientos-create-solucion-new")
+    public ResponseEntity<String> createRequerimientoCreateSolucionNew(@Valid @RequestBody RequerimientoToSolucion requerimiento) throws URISyntaxException {
+        log.debug("REST request to save createRequerimientoCreateSolucion : {}", requerimiento);
+        
+        Requerimiento requerimientoEntity = new Requerimiento();
+        requerimientoEntity.setDetalleproblema(requerimiento.getObservacion());
+        requerimientoEntity.setFechacreacion(Instant.now());
+        requerimientoEntity.setIdUsuario(SecurityUtils.getCurrentUserLogin().get());
+        requerimientoEntity.setTipoRequerimiento(TipoRequerimiento.NUEVOEQUIPO);
+        requerimientoEntity.setEstadoRequerimiento(EstadoRequerimiento.INICIADO);
         
         requerimientoEntity = requerimientoRepository.save(requerimientoEntity);
         List<co.com.hometechclaim.domain.RequerimientoToSolucion> listRequerimientoToSolucion = new ArrayList<>();

@@ -16,6 +16,7 @@ public class RequerimientoToSolucion {
     private List<String> idSoluciones;
     private String observacion;
     private String idToken;
+    private String idUser;
 
     public String getIdToken() {
         return idToken;
@@ -41,6 +42,15 @@ public class RequerimientoToSolucion {
     public void setObservacion(String observacion) {
         this.observacion = observacion;
     }
+
+    public String getIdUser() {
+        return idUser;
+    }
+
+    public void setIdUser(String idUser) {
+        this.idUser = idUser;
+    }
+    
     
     
 }

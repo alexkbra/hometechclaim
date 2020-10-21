@@ -92,7 +92,7 @@ public class RequerimientoResource {
         Requerimiento requerimientoEntity = new Requerimiento();
         requerimientoEntity.setDetalleproblema(requerimiento.getObservacion());
         requerimientoEntity.setFechacreacion(Instant.now());
-        requerimientoEntity.setIdUsuario(SecurityUtils.getCurrentUserLogin().get());
+        requerimientoEntity.setIdUsuario(requerimiento.getIdUser());
         requerimientoEntity.setTipoRequerimiento(TipoRequerimiento.PROBLEMASEQUIPO);
         requerimientoEntity.setEstadoRequerimiento(EstadoRequerimiento.INICIADO);
         
@@ -129,7 +129,7 @@ public class RequerimientoResource {
         Requerimiento requerimientoEntity = new Requerimiento();
         requerimientoEntity.setDetalleproblema(requerimiento.getObservacion());
         requerimientoEntity.setFechacreacion(Instant.now());
-        requerimientoEntity.setIdUsuario(SecurityUtils.getCurrentUserLogin().get());
+        requerimientoEntity.setIdUsuario(requerimiento.getIdUser());
         requerimientoEntity.setTipoRequerimiento(TipoRequerimiento.NUEVOEQUIPO);
         requerimientoEntity.setEstadoRequerimiento(EstadoRequerimiento.INICIADO);
         

@@ -11,5 +11,7 @@ import org.springframework.stereotype.Repository;
 @SuppressWarnings("unused")
 @Repository
 public interface DealerRepository extends JpaRepository<Dealer, Long> {
+    
+    Dealer findByIdusuario(String idusuario);
 
 }
